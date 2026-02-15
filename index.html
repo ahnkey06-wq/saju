@@ -392,6 +392,409 @@ select.form-input {
     color: var(--text-secondary);
 }
 
+/* 2026 Fortune Section */
+.fortune-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    margin-top: 16px;
+    position: relative;
+    overflow: hidden;
+}
+.fortune-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--fire), var(--gold), var(--fire));
+}
+.fortune-year-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding: 16px;
+    background: linear-gradient(135deg, rgba(212,80,80,0.1), rgba(212,165,67,0.1));
+    border-radius: 12px;
+    border: 1px solid rgba(212,80,80,0.2);
+}
+.fortune-year-char {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--fire);
+}
+.fortune-year-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--gold-light);
+}
+.fortune-year-info p {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+.fortune-score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin: 20px 0;
+    padding: 20px;
+    background: var(--bg-light);
+    border-radius: 12px;
+}
+.score-circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    border: 3px solid;
+    flex-shrink: 0;
+}
+.score-circle .score-num {
+    font-size: 28px;
+    line-height: 1;
+}
+.score-circle .score-label {
+    font-size: 11px;
+    margin-top: 2px;
+}
+.score-detail {
+    flex: 1;
+}
+.score-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+.score-row-label {
+    width: 70px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    flex-shrink: 0;
+}
+.score-bar-bg {
+    flex: 1;
+    height: 10px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.score-bar {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 1s ease-out;
+}
+.score-row-val {
+    width: 30px;
+    text-align: right;
+    font-size: 13px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+.fortune-monthly {
+    margin-top: 20px;
+}
+.monthly-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 12px;
+}
+.month-card {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 8px;
+    text-align: center;
+    transition: all 0.3s;
+}
+.month-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+}
+.month-num {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+.month-icon {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+.month-luck {
+    font-size: 12px;
+    font-weight: 600;
+}
+.month-desc {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+    line-height: 1.4;
+}
+.fortune-advice {
+    margin-top: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(212,165,67,0.08), rgba(74,126,196,0.05));
+    border: 1px solid rgba(212,165,67,0.2);
+    border-radius: 12px;
+    border-left: 3px solid var(--gold);
+}
+.fortune-advice-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 8px;
+}
+.fortune-advice-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+.luck-excellent { color: #f59e0b; }
+.luck-good { color: #10b981; }
+.luck-normal { color: #94a3b8; }
+.luck-caution { color: #f97316; }
+.luck-difficult { color: #ef4444; }
+.bar-excellent { background: linear-gradient(90deg, #d97706, #f59e0b); }
+.bar-good { background: linear-gradient(90deg, #059669, #10b981); }
+.bar-normal { background: linear-gradient(90deg, #64748b, #94a3b8); }
+.bar-caution { background: linear-gradient(90deg, #c2410c, #f97316); }
+
+/* 평생운(대운) 섹션 */
+.lifetime-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    margin-top: 16px;
+    position: relative;
+    overflow: hidden;
+}
+.lifetime-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--water), var(--gold), var(--wood), var(--fire), var(--metal));
+}
+.lifetime-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 16px 0;
+}
+.lifetime-summary-item {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+}
+.lifetime-summary-item .ls-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+.lifetime-summary-item .ls-value {
+    font-size: 18px;
+    font-weight: 700;
+}
+.daeun-timeline {
+    display: flex;
+    overflow-x: auto;
+    gap: 0;
+    margin: 20px 0;
+    padding: 8px 0;
+    position: relative;
+}
+.daeun-timeline::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0; right: 0;
+    height: 2px;
+    background: var(--border);
+    z-index: 0;
+}
+.daeun-item {
+    flex: 0 0 auto;
+    width: 100px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    cursor: default;
+    transition: all 0.3s;
+    padding: 8px 4px;
+}
+.daeun-item:hover {
+    transform: translateY(-3px);
+}
+.daeun-item.current {
+    transform: scale(1.08);
+}
+.daeun-item.current .daeun-box {
+    border-color: var(--gold);
+    box-shadow: 0 0 12px rgba(212,165,67,0.3);
+}
+.daeun-item.past .daeun-box {
+    opacity: 0.5;
+}
+.daeun-box {
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 6px;
+    transition: all 0.3s;
+}
+.daeun-age {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+.daeun-chars {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.daeun-name {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+.daeun-element-tag {
+    display: inline-block;
+    font-size: 10px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-top: 4px;
+    font-weight: 500;
+}
+.daeun-score-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 2px;
+    margin-top: 6px;
+    overflow: hidden;
+}
+.daeun-score-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 1s ease-out;
+}
+.current-daeun-detail {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 16px 0;
+    border-left: 3px solid var(--gold);
+}
+.current-daeun-detail h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-bottom: 12px;
+}
+.cd-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.cd-item {
+    background: var(--bg-card);
+    border-radius: 8px;
+    padding: 12px;
+}
+.cd-item-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+.cd-item-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+}
+.lifetime-flow {
+    margin-top: 16px;
+}
+.flow-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-bottom: 12px;
+}
+.flow-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 80px;
+    padding: 4px 0;
+}
+.flow-bar-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-end;
+}
+.flow-bar {
+    width: 100%;
+    max-width: 32px;
+    border-radius: 4px 4px 0 0;
+    transition: height 1s ease-out;
+    min-height: 4px;
+}
+.flow-bar-label {
+    font-size: 9px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    white-space: nowrap;
+}
+.lifetime-advice {
+    margin-top: 16px;
+    padding: 16px;
+    background: linear-gradient(135deg, rgba(74,126,196,0.08), rgba(212,165,67,0.05));
+    border: 1px solid rgba(74,126,196,0.2);
+    border-radius: 12px;
+    border-left: 3px solid var(--water);
+}
+.lifetime-advice-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--water);
+    margin-bottom: 8px;
+}
+.lifetime-advice-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+@media (max-width: 640px) {
+    .monthly-grid { grid-template-columns: repeat(3, 1fr); }
+    .fortune-score { flex-direction: column; }
+    .fortune-year-char { font-size: 32px; }
+    .lifetime-summary { grid-template-columns: 1fr; }
+    .daeun-item { width: 80px; }
+    .daeun-chars { font-size: 18px; }
+    .cd-grid { grid-template-columns: 1fr; }
+    .flow-bar-label { font-size: 8px; }
+}
+
 /* Footer */
 .footer {
     text-align: center;
@@ -518,6 +921,25 @@ select.form-input {
             <div class="section-title serif">命理 — 상세 분석</div>
             <div class="analysis-grid" id="detailGrid"></div>
         </section>
+
+        <!-- 2026 Fortune -->
+        <section class="fortune-card" id="fortuneSection">
+            <div class="section-title serif">🐴 2026년 丙午年 운세</div>
+            <div id="fortuneYearHeader" class="fortune-year-header"></div>
+            <div id="fortuneScore" class="fortune-score"></div>
+            <div id="fortuneMonthly" class="fortune-monthly"></div>
+            <div id="fortuneAdvice" class="fortune-advice"></div>
+        </section>
+
+        <!-- 평생운 (대운) -->
+        <section class="lifetime-card" id="lifetimeSection">
+            <div class="section-title serif">🌊 평생운 — 大運의 흐름</div>
+            <div id="lifetimeSummary" class="lifetime-summary"></div>
+            <div id="daeunTimeline" class="daeun-timeline"></div>
+            <div id="currentDaeunDetail" class="current-daeun-detail"></div>
+            <div id="lifetimeFlow" class="lifetime-flow"></div>
+            <div id="lifetimeAdvice" class="lifetime-advice"></div>
+        </section>
     </div>
 </main>
 
@@ -627,11 +1049,11 @@ function getYearPillar(year, solarMonth, solarDay) {
 // 일주 계산 (JDN 기준)
 function getDayPillar(y, m, d) {
     const jdn = solarToJDN(y, m, d);
-    // 기준: JDN 2451911 = 2001-01-01 = 무오(戊午)일
-    // 戊=4, 午=6
+    // 기준: JDN 2451911 = 2001-01-01 = 갑자(甲子)일
+    // 甲=0, 子=0
     const diff = jdn - 2451911;
-    const ganIdx = ((diff % 10) + 4 + 100) % 10;
-    const jiIdx = ((diff % 12) + 6 + 120) % 12;
+    const ganIdx = ((diff % 10) + 10) % 10;
+    const jiIdx = ((diff % 12) + 12) % 12;
     return { gan: ganIdx, ji: jiIdx };
 }
 
@@ -768,6 +1190,8 @@ function analyze() {
     renderOhaeng(elements, totalElements);
     renderPersonality(dayP.gan, elements);
     renderDetail(dayP.gan, yearP, monthP, dayP, hourP, elements, gender);
+    render2026Fortune(dayP.gan, dayP.ji, elements, gender);
+    renderLifetimeFortune(dayP.gan, dayP.ji, yearP.gan, monthP.gan, monthP.ji, elements, gender, year);
 
     document.getElementById('result').style.display = 'block';
     document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -905,6 +1329,692 @@ function renderDetail(ganIdx, yearP, monthP, dayP, hourP, elements, gender) {
     `;
 
     document.getElementById('detailGrid').innerHTML = html;
+}
+
+// ===== 2026년 병오(丙午)년 운세 분석 =====
+// 2026년: 천간 丙(병화/양화), 지지 午(오화/양화) → 불의 해
+// 십성(十星) 관계: 일간과 세운 천간의 관계
+
+function getTenStar(dayGan, targetGan) {
+    const dayEl = CHEONGAN_ELEMENT[dayGan];
+    const targetEl = CHEONGAN_ELEMENT[targetGan];
+    const daySame = dayGan % 2; // 0=양, 1=음
+    const targetSame = targetGan % 2;
+    const samePolarity = daySame === targetSame;
+
+    // 오행 상생상극 관계
+    // 생(生): 목→화→토→금→수→목
+    // 극(克): 목→토→수→화→금→목
+
+    if (dayEl === targetEl) {
+        return samePolarity ? { name: '비견(比肩)', desc: '경쟁과 자립의 해', type: 'peer' }
+                           : { name: '겁재(劫財)', desc: '협력과 경쟁의 해', type: 'peer' };
+    }
+
+    // 내가 생하는 것 = 식상
+    if ((dayEl + 1) % 5 === targetEl) {
+        return samePolarity ? { name: '식신(食神)', desc: '창작과 표현의 해', type: 'output' }
+                           : { name: '상관(傷官)', desc: '변화와 도전의 해', type: 'output' };
+    }
+
+    // 내가 극하는 것 = 재성
+    if ((dayEl + 2) % 5 === targetEl) {
+        return samePolarity ? { name: '편재(偏財)', desc: '투자와 기회의 해', type: 'wealth' }
+                           : { name: '정재(正財)', desc: '안정적 재물의 해', type: 'wealth' };
+    }
+
+    // 나를 극하는 것 = 관성
+    if ((dayEl + 3) % 5 === targetEl) {
+        return samePolarity ? { name: '편관(偏官)', desc: '도전과 성취의 해', type: 'power' }
+                           : { name: '정관(正官)', desc: '명예와 승진의 해', type: 'power' };
+    }
+
+    // 나를 생하는 것 = 인성
+    if ((dayEl + 4) % 5 === targetEl) {
+        return samePolarity ? { name: '편인(偏印)', desc: '학문과 깨달음의 해', type: 'resource' }
+                           : { name: '정인(正印)', desc: '지혜와 안정의 해', type: 'resource' };
+    }
+
+    return { name: '비견', desc: '자립의 해', type: 'peer' };
+}
+
+function render2026Fortune(dayGan, dayJi, elements, gender) {
+    // 2026 병오년: 천간 丙(2), 지지 午(6)
+    const yearGan2026 = 2; // 병(丙)
+    const yearJi2026 = 6;  // 오(午)
+
+    const tenStar = getTenStar(dayGan, yearGan2026);
+    const dayElIdx = CHEONGAN_ELEMENT[dayGan];
+
+    // 일간과 세운의 오행 관계로 종합 점수 계산
+    const yearEl = 1; // 병오 = 화(火)
+
+    // 상생/상극 기반 점수
+    let baseScore = 65;
+    // 내가 생하는 것 (식상) → 에너지 소모, 표현력 증가
+    if ((dayElIdx + 1) % 5 === yearEl) baseScore = 72;
+    // 내가 극하는 것 (재성) → 재물 기회
+    if ((dayElIdx + 2) % 5 === yearEl) baseScore = 78;
+    // 나를 극하는 것 (관성) → 압박, 성장
+    if ((dayElIdx + 3) % 5 === yearEl) baseScore = 60;
+    // 나를 생하는 것 (인성) → 도움, 안정
+    if ((dayElIdx + 4) % 5 === yearEl) baseScore = 80;
+    // 같은 오행 (비겁) → 경쟁, 자립
+    if (dayElIdx === yearEl) baseScore = 68;
+
+    // 일지와 세운지지 관계 보정
+    // 오(午)와 일지 관계
+    const jiRelation = getJijiRelation(dayJi, yearJi2026);
+    baseScore += jiRelation.scoreAdj;
+
+    // 사주 오행 균형 보정
+    const minEl = Math.min(...elements);
+    const maxEl = Math.max(...elements);
+    if (elements[yearEl] === 0) baseScore += 5; // 부족한 화를 보충
+    if (elements[yearEl] >= 3) baseScore -= 5; // 이미 화가 과다
+
+    baseScore = Math.max(40, Math.min(95, baseScore));
+
+    // 세부 점수
+    const scores = calcDetailScores(dayGan, dayJi, elements, tenStar.type, baseScore);
+
+    // 월별 운세
+    const monthlyFortune = calcMonthlyFortune(dayGan, dayJi, elements);
+
+    // 렌더링
+    // Header
+    document.getElementById('fortuneYearHeader').innerHTML = `
+        <div class="fortune-year-char">🐴 丙午</div>
+        <div class="fortune-year-info">
+            <h3>2026년 병오(丙午)년 — ${tenStar.name}</h3>
+            <p>${tenStar.desc} · 붉은 말의 해 · 화(火)기운이 강한 해</p>
+            <p style="margin-top:4px;font-size:12px;color:var(--text-muted)">세운 천간: 丙(병화) · 세운 지지: 午(오화) · ${jiRelation.text}</p>
+        </div>
+    `;
+
+    // Score
+    const scoreColor = baseScore >= 75 ? 'var(--gold)' : baseScore >= 60 ? 'var(--wood)' : baseScore >= 45 ? 'var(--text-secondary)' : 'var(--fire)';
+    const scoreGrade = baseScore >= 80 ? '대길(大吉)' : baseScore >= 70 ? '길(吉)' : baseScore >= 55 ? '평(平)' : baseScore >= 45 ? '소흉(小凶)' : '주의(注意)';
+
+    document.getElementById('fortuneScore').innerHTML = `
+        <div class="score-circle" style="border-color:${scoreColor};color:${scoreColor}">
+            <div class="score-num">${baseScore}</div>
+            <div class="score-label">${scoreGrade}</div>
+        </div>
+        <div class="score-detail">
+            ${renderScoreRow('💰 재물운', scores.wealth, scores.wealth >= 70 ? 'bar-excellent' : scores.wealth >= 55 ? 'bar-good' : 'bar-normal')}
+            ${renderScoreRow('💼 직장운', scores.career, scores.career >= 70 ? 'bar-excellent' : scores.career >= 55 ? 'bar-good' : 'bar-normal')}
+            ${renderScoreRow('❤️ 애정운', scores.love, scores.love >= 70 ? 'bar-excellent' : scores.love >= 55 ? 'bar-good' : 'bar-normal')}
+            ${renderScoreRow('🏥 건강운', scores.health, scores.health >= 70 ? 'bar-good' : scores.health >= 55 ? 'bar-normal' : 'bar-caution')}
+            ${renderScoreRow('🎓 학업운', scores.study, scores.study >= 70 ? 'bar-excellent' : scores.study >= 55 ? 'bar-good' : 'bar-normal')}
+            ${renderScoreRow('🤝 대인운', scores.social, scores.social >= 70 ? 'bar-excellent' : scores.social >= 55 ? 'bar-good' : 'bar-normal')}
+        </div>
+    `;
+
+    // Monthly
+    const monthIcons = ['❄️','🌸','🌸','🌿','🌿','☀️','☀️','🍂','🍂','🍂','❄️','❄️'];
+    let monthHtml = '<div class="section-title serif" style="font-size:16px;">📅 2026년 월별 운세</div><div class="monthly-grid">';
+    monthlyFortune.forEach((m, i) => {
+        const luckClass = m.score >= 80 ? 'luck-excellent' : m.score >= 65 ? 'luck-good' : m.score >= 50 ? 'luck-normal' : m.score >= 40 ? 'luck-caution' : 'luck-difficult';
+        const luckText = m.score >= 80 ? '대길' : m.score >= 65 ? '길' : m.score >= 50 ? '평' : m.score >= 40 ? '소흉' : '주의';
+        monthHtml += `<div class="month-card">
+            <div class="month-num">${i + 1}월</div>
+            <div class="month-icon">${monthIcons[i]}</div>
+            <div class="month-luck ${luckClass}">${luckText} ${m.score}점</div>
+            <div class="month-desc">${m.desc}</div>
+        </div>`;
+    });
+    monthHtml += '</div>';
+    document.getElementById('fortuneMonthly').innerHTML = monthHtml;
+
+    // Advice
+    const advice = getFortuneAdvice(dayGan, tenStar.type, elements, baseScore, scores);
+    document.getElementById('fortuneAdvice').innerHTML = `
+        <div class="fortune-advice-title">🔮 2026년 종합 조언</div>
+        <div class="fortune-advice-text">${advice}</div>
+    `;
+}
+
+function renderScoreRow(label, score, barClass) {
+    return `<div class="score-row">
+        <div class="score-row-label">${label}</div>
+        <div class="score-bar-bg"><div class="score-bar ${barClass}" style="width:${score}%"></div></div>
+        <div class="score-row-val">${score}</div>
+    </div>`;
+}
+
+function getJijiRelation(dayJi, yearJi) {
+    // 간소화된 지지 관계 (합, 충, 형, 해)
+    // 午 충: 子(0)
+    if (dayJi === 0 && yearJi === 6) return { text: '일지 子와 세운 午 — 자오충(子午沖)', scoreAdj: -8 };
+    if (dayJi === 6) return { text: '일지 午와 세운 午 — 자형(自刑)', scoreAdj: -3 };
+    // 午 합: 未(7) 육합
+    if (dayJi === 7) return { text: '일지 未와 세운 午 — 오미합(午未合) 길', scoreAdj: 8 };
+    // 午 삼합: 寅(2), 戌(10) — 화국
+    if (dayJi === 2) return { text: '일지 寅과 세운 午 — 인오술 삼합(화국)', scoreAdj: 10 };
+    if (dayJi === 10) return { text: '일지 戌과 세운 午 — 인오술 삼합(화국)', scoreAdj: 10 };
+    // 午 형: 午(6) 자형
+    // 午 해: 丑(1)
+    if (dayJi === 1) return { text: '일지 丑과 세운 午 — 축오해(丑午害)', scoreAdj: -5 };
+    // 나머지
+    return { text: '일지와 세운지지 — 특별한 충합 없음', scoreAdj: 0 };
+}
+
+function calcDetailScores(dayGan, dayJi, elements, tenStarType, base) {
+    let wealth = base, career = base, love = base, health = base, study = base, social = base;
+
+    // 십성 유형에 따른 보정
+    switch(tenStarType) {
+        case 'wealth':
+            wealth += 12; career += 5; love += 3; health -= 3; study -= 2; social += 5;
+            break;
+        case 'power':
+            career += 12; wealth += 3; love -= 2; health -= 5; study += 5; social += 3;
+            break;
+        case 'resource':
+            study += 12; health += 5; career += 5; love += 3; wealth += 2; social += 5;
+            break;
+        case 'output':
+            love += 8; study += 5; social += 8; career += 3; wealth -= 3; health -= 3;
+            break;
+        case 'peer':
+            social += 5; career -= 2; wealth -= 3; love += 3; health += 3; study += 2;
+            break;
+    }
+
+    // 화(火) 과다시 건강 주의 (심장, 혈압)
+    if (elements[1] >= 2) health -= 5;
+    // 화 부족시 활력 부족
+    if (elements[1] === 0) { career += 5; health += 3; }
+    // 수(水) 있으면 화를 제어 → 건강 보정
+    if (elements[4] >= 1) health += 3;
+
+    // 일간별 미세 보정 (화의 해에 각 일간의 반응)
+    const dayEl = CHEONGAN_ELEMENT[dayGan];
+    if (dayEl === 0) { career += 3; wealth += 2; } // 목 → 화를 생함 (설기, 에너지 소모)
+    if (dayEl === 1) { social += 5; love += 5; }   // 화 → 비겁, 경쟁과 열정
+    if (dayEl === 2) { wealth += 5; career += 3; }  // 토 → 화가 생해줌 (인성)
+    if (dayEl === 3) { health -= 3; career += 5; }  // 금 → 화가 극함 (관성, 압박)
+    if (dayEl === 4) { study += 5; wealth += 3; }   // 수 → 화를 극함 (재성, 기회)
+
+    return {
+        wealth: Math.max(30, Math.min(95, Math.round(wealth))),
+        career: Math.max(30, Math.min(95, Math.round(career))),
+        love: Math.max(30, Math.min(95, Math.round(love))),
+        health: Math.max(30, Math.min(95, Math.round(health))),
+        study: Math.max(30, Math.min(95, Math.round(study))),
+        social: Math.max(30, Math.min(95, Math.round(social)))
+    };
+}
+
+function calcMonthlyFortune(dayGan, dayJi, elements) {
+    // 2026년 월별 천간지지
+    // 1월(경인), 2월(신묘), 3월(임진), 4월(계사), 5월(갑오), 6월(을미)
+    // 7월(병신), 8월(정유), 9월(무술), 10월(기해), 11월(경자), 12월(신축)
+    const monthGans = [6,7,8,9,0,1,2,3,4,5,6,7]; // 경,신,임,계,갑,을,병,정,무,기,경,신
+    const monthJis = [2,3,4,5,6,7,8,9,10,11,0,1]; // 인,묘,진,사,오,미,신,유,술,해,자,축
+
+    const dayEl = CHEONGAN_ELEMENT[dayGan];
+    const descs = [];
+
+    const shortDescs = {
+        wealth: ['재물 기회', '투자 유리', '수입 증가', '재물 길'],
+        career: ['승진 기회', '직장 발전', '사업 호조', '업무 순탄'],
+        love: ['인연 좋음', '만남 길', '애정 깊어짐', '감정 풍부'],
+        health: ['건강 양호', '활력 충만', '체력 좋음', '기운 좋음'],
+        study: ['학업 길', '시험 유리', '집중력 상승', '깨달음'],
+        social: ['귀인 만남', '인맥 확장', '대인 좋음', '협력 좋음'],
+        caution: ['지출 주의', '건강 조심', '갈등 주의', '과로 주의', '감정 조절', '신중히']
+    };
+
+    for (let m = 0; m < 12; m++) {
+        const mGan = monthGans[m];
+        const mJi = monthJis[m];
+        const mEl = CHEONGAN_ELEMENT[mGan];
+        const mJiEl = JIJI_ELEMENT[mJi];
+
+        let score = 65;
+        let desc = '';
+
+        // 월간과 일간 관계
+        const mTenStar = getTenStar(dayGan, mGan);
+
+        switch(mTenStar.type) {
+            case 'wealth': score += 8; desc = shortDescs.wealth[m % 4]; break;
+            case 'power': score += 2; desc = shortDescs.career[m % 4]; break;
+            case 'resource': score += 10; desc = shortDescs.study[m % 4]; break;
+            case 'output': score += 5; desc = shortDescs.love[m % 4]; break;
+            case 'peer': score += 0; desc = shortDescs.social[m % 4]; break;
+        }
+
+        // 월지와 일지 충합
+        if ((mJi + 6) % 12 === dayJi) { score -= 10; desc = shortDescs.caution[m % 6]; }
+        // 삼합
+        if ((mJi + dayJi) % 4 === 0 && mJi !== dayJi) score += 3;
+        // 육합
+        const yukHap = [[0,1],[2,11],[3,10],[4,9],[5,8],[6,7]];
+        yukHap.forEach(([a,b]) => { if ((dayJi===a && mJi===b)||(dayJi===b && mJi===a)) score += 5; });
+
+        // 계절 보정 (봄 목, 여름 화, 가을 금, 겨울 수)
+        if (m >= 0 && m <= 2 && dayEl === 0) score += 3; // 봄에 목
+        if (m >= 3 && m <= 5 && dayEl === 1) score += 3; // 여름에 화
+        if (m >= 6 && m <= 8 && dayEl === 3) score += 3; // 가을에 금
+        if (m >= 9 && m <= 11 && dayEl === 4) score += 3; // 겨울에 수
+
+        score = Math.max(35, Math.min(95, score));
+        descs.push({ score, desc });
+    }
+
+    return descs;
+}
+
+// ===== 평생운 (대운) 계산 =====
+// 대운: 월주를 기반으로 10년 단위로 순행/역행
+// 남자 양년생 or 여자 음년생 → 순행 (월주부터 다음 간지로)
+// 남자 음년생 or 여자 양년생 → 역행
+
+function calcDaeun(yearGan, monthGan, monthJi, gender, birthYear) {
+    const yearYinYang = yearGan % 2; // 0=양, 1=음
+    const isForward = (gender === 'male' && yearYinYang === 0) || (gender === 'female' && yearYinYang === 1);
+
+    // 대운 시작 나이 (간소화: 절기까지 남은 일 / 3)
+    // 실제로는 생일부터 다음/이전 절기까지의 일수 / 3
+    // 간소화: 평균 3~4세에 시작
+    const startAge = 3 + (monthGan % 4); // 3~6세 사이
+
+    const daeunList = [];
+    for (let i = 0; i < 9; i++) { // 9개 대운 (약 90세까지)
+        let gan, ji;
+        if (isForward) {
+            gan = (monthGan + i + 1) % 10;
+            ji = (monthJi + i + 1) % 12;
+        } else {
+            gan = (monthGan - i - 1 + 100) % 10;
+            ji = (monthJi - i - 1 + 120) % 12;
+        }
+        const ageFrom = startAge + i * 10;
+        const ageTo = ageFrom + 9;
+        const yearFrom = birthYear + ageFrom;
+        const yearTo = birthYear + ageTo;
+
+        daeunList.push({
+            gan, ji, ageFrom, ageTo, yearFrom, yearTo,
+            ganName: CHEONGAN[gan], jiName: JIJI[ji],
+            ganHanja: CHEONGAN_HANJA[gan], jiHanja: JIJI_HANJA[ji],
+            ganEl: CHEONGAN_ELEMENT[gan], jiEl: JIJI_ELEMENT[ji]
+        });
+    }
+    return { daeunList, startAge, isForward };
+}
+
+// 대운별 운세 점수 계산 (재물, 건강, 연애, 자식, 배우자, 직업, 학업)
+function calcDaeunScores(dayGan, dayJi, elements, daeun) {
+    const dayEl = CHEONGAN_ELEMENT[dayGan];
+    const dGan = daeun.gan;
+    const dJi = daeun.ji;
+    const dGanEl = CHEONGAN_ELEMENT[dGan];
+    const dJiEl = JIJI_ELEMENT[dJi];
+
+    const tenStar = getTenStar(dayGan, dGan);
+    let base = 62;
+
+    // 십성 기반 기본 점수
+    switch(tenStar.type) {
+        case 'wealth': base = 72; break;
+        case 'power': base = 66; break;
+        case 'resource': base = 75; break;
+        case 'output': base = 70; break;
+        case 'peer': base = 60; break;
+    }
+
+    // 지지 충합 보정
+    const jiRel = getJijiRelation(dayJi, dJi);
+    base += jiRel.scoreAdj;
+
+    // 오행 보완 보정
+    const minElIdx = elements.indexOf(Math.min(...elements));
+    if (dGanEl === minElIdx || dJiEl === minElIdx) base += 6; // 부족한 오행 보충
+
+    // 과다 오행 보정
+    const maxElIdx = elements.indexOf(Math.max(...elements));
+    if (dGanEl === maxElIdx && dJiEl === maxElIdx) base -= 4;
+
+    base = Math.max(35, Math.min(92, base));
+
+    // ====== 세부 운세 계산 ======
+    let wealth = base, health = base, love = base, children = base, spouse = base, career = base;
+
+    // 재물운 (재성 관련)
+    // 내가 극하는 오행이 재성
+    const wealthEl = (dayEl + 2) % 5;
+    if (dGanEl === wealthEl || dJiEl === wealthEl) wealth += 12;
+    if (tenStar.type === 'wealth') wealth += 8;
+    if (tenStar.type === 'output') wealth += 3; // 식상생재
+    // 오행 균형 좋으면 재물 안정
+    const elRange = Math.max(...elements) - Math.min(...elements);
+    if (elRange <= 2) wealth += 3;
+
+    // 건강운 (인성, 비겁 관련)
+    if (tenStar.type === 'resource') health += 8;
+    if (tenStar.type === 'peer') health += 3;
+    if (tenStar.type === 'power') health -= 5; // 관성은 스트레스
+    // 일간 오행별 건강 약점
+    if (dayEl === 0 && (dGanEl === 3 || dJiEl === 3)) health -= 5; // 금극목
+    if (dayEl === 1 && (dGanEl === 4 || dJiEl === 4)) health -= 5; // 수극화
+    if (dayEl === 2 && (dGanEl === 0 || dJiEl === 0)) health -= 5; // 목극토
+    if (dayEl === 3 && (dGanEl === 1 || dJiEl === 1)) health -= 5; // 화극금
+    if (dayEl === 4 && (dGanEl === 2 || dJiEl === 2)) health -= 5; // 토극수
+    if (elements[4] >= 1 && dGanEl !== 1) health += 2; // 수가 있으면 안정
+
+    // 연애운 (식상, 재성 관련)
+    if (tenStar.type === 'output') love += 10;
+    if (tenStar.type === 'wealth') love += 6;
+    // 오화(午) 등 화 계열은 열정
+    if (dGanEl === 1 || dJiEl === 1) love += 3;
+    // 지지 합이면 인연 좋음
+    if (jiRel.scoreAdj > 0) love += 5;
+
+    // 배우자운
+    // 남자: 재성이 배우자, 여자: 관성이 배우자
+    // 간소화: 식상/재성은 배우자 길, 관성도 배우자 관련
+    if (tenStar.type === 'wealth') spouse += 10;
+    if (tenStar.type === 'power') spouse += 8;
+    if (tenStar.type === 'output') spouse += 5;
+    // 일지와 대운지지 합이면 배우자 길
+    if (jiRel.scoreAdj >= 5) spouse += 8;
+    if (jiRel.scoreAdj <= -5) spouse -= 6;
+
+    // 자식운
+    // 식상(食傷)이 자식 → 식상 대운에서 자식운 상승
+    if (tenStar.type === 'output') children += 12;
+    if (tenStar.type === 'resource') children += 5; // 인성은 학업으로 자식 교육
+    if (tenStar.type === 'peer') children += 3;
+    // 화(火)의 생명력
+    if (dGanEl === 1 || dJiEl === 1) children += 3;
+    if (jiRel.scoreAdj >= 5) children += 4;
+
+    // 직업운
+    if (tenStar.type === 'power') career += 12; // 관성 = 직위
+    if (tenStar.type === 'wealth') career += 8;
+    if (tenStar.type === 'resource') career += 5;
+    if (tenStar.type === 'output') career += 3;
+
+    return {
+        total: Math.max(35, Math.min(92, Math.round(base))),
+        wealth: Math.max(30, Math.min(95, Math.round(wealth))),
+        health: Math.max(30, Math.min(95, Math.round(health))),
+        love: Math.max(30, Math.min(95, Math.round(love))),
+        children: Math.max(30, Math.min(95, Math.round(children))),
+        spouse: Math.max(30, Math.min(95, Math.round(spouse))),
+        career: Math.max(30, Math.min(95, Math.round(career))),
+        tenStar: tenStar
+    };
+}
+
+function renderLifetimeFortune(dayGan, dayJi, yearGan, monthGan, monthJi, elements, gender, birthYear) {
+    const { daeunList, startAge, isForward } = calcDaeun(yearGan, monthGan, monthJi, gender, birthYear);
+    const currentYear = new Date().getFullYear();
+    const currentAge = currentYear - birthYear;
+
+    // 각 대운 점수 계산
+    const daeunScores = daeunList.map(d => calcDaeunScores(dayGan, dayJi, elements, d));
+
+    // 현재 대운 찾기
+    let currentIdx = 0;
+    for (let i = 0; i < daeunList.length; i++) {
+        if (currentAge >= daeunList[i].ageFrom && currentAge <= daeunList[i].ageTo) {
+            currentIdx = i;
+            break;
+        }
+        if (currentAge > daeunList[i].ageTo) currentIdx = i + 1;
+    }
+    if (currentIdx >= daeunList.length) currentIdx = daeunList.length - 1;
+
+    const curDaeun = daeunList[currentIdx];
+    const curScores = daeunScores[currentIdx];
+
+    // === 1. 상단 요약 카드 ===
+    const bestIdx = daeunScores.reduce((best, s, i) => s.total > daeunScores[best].total ? i : best, 0);
+    const bestDaeun = daeunList[bestIdx];
+
+    document.getElementById('lifetimeSummary').innerHTML = `
+        <div class="lifetime-summary-item">
+            <div class="ls-label">현재 대운</div>
+            <div class="ls-value" style="color:${ELEMENT_COLORS[curDaeun.ganEl]}">
+                ${curDaeun.ganHanja}${curDaeun.jiHanja} (${curDaeun.ageFrom}~${curDaeun.ageTo}세)
+            </div>
+        </div>
+        <div class="lifetime-summary-item">
+            <div class="ls-label">대운 방향</div>
+            <div class="ls-value" style="color:var(--gold)">${isForward ? '순행 ▶' : '◀ 역행'}</div>
+        </div>
+        <div class="lifetime-summary-item">
+            <div class="ls-label">최고 운기</div>
+            <div class="ls-value" style="color:var(--gold-light)">
+                ${bestDaeun.ageFrom}~${bestDaeun.ageTo}세
+            </div>
+        </div>
+    `;
+
+    // === 2. 대운 타임라인 ===
+    let timelineHtml = '';
+    daeunList.forEach((d, i) => {
+        const isCurrent = i === currentIdx;
+        const isPast = currentAge > d.ageTo;
+        const stateClass = isCurrent ? 'current' : (isPast ? 'past' : '');
+        const score = daeunScores[i].total;
+        const barColor = score >= 75 ? 'var(--gold)' : score >= 60 ? 'var(--wood)' : score >= 45 ? 'var(--text-secondary)' : 'var(--fire)';
+
+        timelineHtml += `<div class="daeun-item ${stateClass}">
+            <div class="daeun-box">
+                <div class="daeun-age">${d.ageFrom}~${d.ageTo}세</div>
+                <div class="daeun-chars" style="color:${ELEMENT_COLORS[d.ganEl]}">${d.ganHanja}${d.jiHanja}</div>
+                <div class="daeun-name">${d.ganName}${d.jiName}</div>
+                <span class="daeun-element-tag ${ELEMENT_CLASSES[d.ganEl]}">${ELEMENT_SHORT[d.ganEl]}</span>
+                <span class="daeun-element-tag ${ELEMENT_CLASSES[d.jiEl]}">${ELEMENT_SHORT[d.jiEl]}</span>
+                <div class="daeun-score-bar"><div class="daeun-score-fill" style="width:${score}%;background:${barColor}"></div></div>
+            </div>
+            <div style="font-size:10px;color:var(--text-muted);margin-top:4px">${d.yearFrom}~${d.yearTo}</div>
+        </div>`;
+    });
+    document.getElementById('daeunTimeline').innerHTML = timelineHtml;
+
+    // === 3. 현재 대운 상세 (재물, 건강, 연애, 자식, 배우자운) ===
+    function scoreBarHtml(label, icon, score) {
+        const barClass = score >= 75 ? 'bar-excellent' : score >= 60 ? 'bar-good' : score >= 45 ? 'bar-normal' : 'bar-caution';
+        const grade = score >= 80 ? '대길' : score >= 70 ? '길' : score >= 55 ? '평' : score >= 45 ? '소흉' : '주의';
+        return `<div class="cd-item">
+            <div class="cd-item-label">${icon} ${label}</div>
+            <div style="display:flex;align-items:center;gap:8px;margin-top:4px">
+                <div style="flex:1;height:8px;background:rgba(255,255,255,0.05);border-radius:4px;overflow:hidden">
+                    <div class="score-bar ${barClass}" style="width:${score}%;height:100%;border-radius:4px"></div>
+                </div>
+                <div class="cd-item-value" style="font-size:13px;min-width:60px">${score}점 ${grade}</div>
+            </div>
+        </div>`;
+    }
+
+    // 대운별 세부 조언
+    const tenStarName = curScores.tenStar.name;
+    const tenStarDesc = curScores.tenStar.desc;
+
+    document.getElementById('currentDaeunDetail').innerHTML = `
+        <h4>📍 현재 대운: ${curDaeun.ganHanja}${curDaeun.jiHanja} (${curDaeun.ganName}${curDaeun.jiName}) — ${curDaeun.ageFrom}~${curDaeun.ageTo}세</h4>
+        <div style="font-size:13px;color:var(--text-secondary);margin-bottom:12px">
+            대운 십성: <strong style="color:var(--gold)">${tenStarName}</strong> · ${tenStarDesc} · ${curDaeun.yearFrom}~${curDaeun.yearTo}년
+        </div>
+        <div class="cd-grid">
+            ${scoreBarHtml('재물운', '💰', curScores.wealth)}
+            ${scoreBarHtml('직업운', '💼', curScores.career)}
+            ${scoreBarHtml('건강운', '🏥', curScores.health)}
+            ${scoreBarHtml('연애운', '❤️', curScores.love)}
+            ${scoreBarHtml('배우자운', '💑', curScores.spouse)}
+            ${scoreBarHtml('자식운', '👶', curScores.children)}
+        </div>
+    `;
+
+    // === 4. 평생 운세 흐름 차트 ===
+    let flowHtml = '<div class="flow-title">📈 평생 운세 흐름</div>';
+
+    // 종합 운세 막대
+    flowHtml += '<div style="margin-bottom:12px;font-size:12px;color:var(--text-muted)">▶ 종합 운기</div><div class="flow-chart">';
+    daeunList.forEach((d, i) => {
+        const s = daeunScores[i].total;
+        const barColor = s >= 75 ? 'var(--gold)' : s >= 60 ? 'var(--wood)' : s >= 45 ? 'var(--text-secondary)' : 'var(--fire)';
+        const h = Math.max(8, s * 0.8);
+        const isCur = i === currentIdx;
+        flowHtml += `<div class="flow-bar-wrap">
+            <div class="flow-bar" style="height:${h}%;background:${barColor};${isCur ? 'box-shadow:0 0 6px var(--gold);' : ''}"></div>
+            <div class="flow-bar-label" style="${isCur ? 'color:var(--gold);font-weight:700' : ''}">${d.ageFrom}대</div>
+        </div>`;
+    });
+    flowHtml += '</div>';
+
+    // 세부 운세 흐름 (재물, 건강, 연애, 배우자, 자식)
+    const flowItems = [
+        { key: 'wealth', label: '💰 재물운', color: 'var(--gold)' },
+        { key: 'health', label: '🏥 건강운', color: 'var(--wood)' },
+        { key: 'love', label: '❤️ 연애운', color: 'var(--fire)' },
+        { key: 'spouse', label: '💑 배우자운', color: '#e879a0' },
+        { key: 'children', label: '👶 자식운', color: 'var(--water)' }
+    ];
+
+    flowItems.forEach(fi => {
+        flowHtml += `<div style="margin-top:12px;margin-bottom:4px;font-size:12px;color:var(--text-muted)">▶ ${fi.label}</div><div class="flow-chart">`;
+        daeunList.forEach((d, i) => {
+            const s = daeunScores[i][fi.key];
+            const h = Math.max(8, s * 0.8);
+            const isCur = i === currentIdx;
+            flowHtml += `<div class="flow-bar-wrap">
+                <div class="flow-bar" style="height:${h}%;background:${fi.color};opacity:${isCur ? 1 : 0.7};${isCur ? 'box-shadow:0 0 6px ' + fi.color + ';' : ''}"></div>
+                <div class="flow-bar-label" style="${isCur ? 'color:var(--gold);font-weight:700' : ''}">${d.ageFrom}대</div>
+            </div>`;
+        });
+        flowHtml += '</div>';
+    });
+
+    document.getElementById('lifetimeFlow').innerHTML = flowHtml;
+
+    // === 5. 평생운 종합 조언 ===
+    let adviceText = '';
+
+    // 대운 흐름 분석
+    adviceText += `대운은 ${isForward ? '<strong>순행(順行)</strong>' : '<strong>역행(逆行)</strong>'}으로 ${startAge}세부터 시작합니다. `;
+    adviceText += `현재 <strong style="color:${ELEMENT_COLORS[curDaeun.ganEl]}">${curDaeun.ganHanja}${curDaeun.jiHanja} 대운</strong>(${curDaeun.ageFrom}~${curDaeun.ageTo}세)에 있으며, `;
+    adviceText += `${tenStarName}의 기운이 작용합니다.`;
+
+    // 현재 대운 해석
+    adviceText += '<br><br>';
+    switch(curScores.tenStar.type) {
+        case 'wealth':
+            adviceText += '💰 <strong>재성 대운</strong>입니다. 재물과 관련된 기회가 많은 시기입니다. 투자, 사업, 재테크에 유리하며, 현실적인 목표를 세우고 꾸준히 노력하면 좋은 성과를 얻을 수 있습니다. 다만 과욕은 금물이며 안정적인 자산 관리가 중요합니다.';
+            break;
+        case 'power':
+            adviceText += '💼 <strong>관성 대운</strong>입니다. 직장이나 사회적 지위에 변화가 있는 시기입니다. 승진, 명예, 책임감이 커지며, 조직 내에서 인정받을 수 있습니다. 다만 스트레스와 압박감도 있으므로 건강 관리에 신경 쓰세요.';
+            break;
+        case 'resource':
+            adviceText += '🎓 <strong>인성 대운</strong>입니다. 학업, 자기계발, 내면의 성장에 유리한 시기입니다. 귀인의 도움을 받기 쉬우며, 새로운 지식과 지혜를 쌓기 좋습니다. 정신적 안정과 평화를 느끼는 시기입니다.';
+            break;
+        case 'output':
+            adviceText += '🎨 <strong>식상 대운</strong>입니다. 창의력, 표현력이 극대화되는 시기입니다. 예술, 창작, 자유로운 활동에 유리합니다. 자식운도 좋으며, 새로운 것을 탄생시키는 기운이 있습니다. 다만 체력 소모에 주의하세요.';
+            break;
+        case 'peer':
+            adviceText += '🤝 <strong>비겁 대운</strong>입니다. 독립심이 강해지고 자기 주도적인 삶을 살게 되는 시기입니다. 경쟁이 있지만 자립의 기회이기도 합니다. 인간관계에서 주도권을 쥐게 되며, 새로운 시작에 유리합니다.';
+            break;
+    }
+
+    // 재물운 특별 조언
+    adviceText += '<br><br>💰 <strong>재물운 포인트:</strong> ';
+    const wealthPeak = daeunScores.reduce((best, s, i) => s.wealth > daeunScores[best].wealth ? i : best, 0);
+    adviceText += `재물운이 가장 좋은 시기는 <strong>${daeunList[wealthPeak].ageFrom}~${daeunList[wealthPeak].ageTo}세</strong>(${daeunList[wealthPeak].yearFrom}~${daeunList[wealthPeak].yearTo}년)입니다. `;
+    if (curScores.wealth >= 70) adviceText += '현재 재물운이 좋으니 적극적인 재테크를 추천합니다.';
+    else if (curScores.wealth >= 55) adviceText += '현재 재물운은 보통이며, 안정적인 저축과 투자를 권합니다.';
+    else adviceText += '현재 재물운은 다소 낮으니 큰 투자보다는 절약과 안정을 추구하세요.';
+
+    // 건강운 특별 조언
+    adviceText += '<br><br>🏥 <strong>건강운 포인트:</strong> ';
+    const healthLow = daeunScores.reduce((worst, s, i) => s.health < daeunScores[worst].health ? i : worst, 0);
+    adviceText += `건강에 특히 주의해야 할 시기는 <strong>${daeunList[healthLow].ageFrom}~${daeunList[healthLow].ageTo}세</strong>입니다. `;
+    const dayElForHealth = CHEONGAN_ELEMENT[dayGan];
+    const healthParts = ['간/담(肝膽)', '심장/소장(心小腸)', '위/비장(胃脾)', '폐/대장(肺大腸)', '신장/방광(腎膀胱)'];
+    adviceText += `일간 기준 ${healthParts[dayElForHealth]} 건강에 평생 유의하세요.`;
+
+    // 연애/배우자운 조언
+    adviceText += '<br><br>❤️ <strong>연애·배우자운 포인트:</strong> ';
+    const lovePeak = daeunScores.reduce((best, s, i) => s.love > daeunScores[best].love ? i : best, 0);
+    const spousePeak = daeunScores.reduce((best, s, i) => s.spouse > daeunScores[best].spouse ? i : best, 0);
+    adviceText += `연애운이 가장 좋은 시기는 <strong>${daeunList[lovePeak].ageFrom}~${daeunList[lovePeak].ageTo}세</strong>이며, `;
+    adviceText += `배우자운이 가장 좋은 시기는 <strong>${daeunList[spousePeak].ageFrom}~${daeunList[spousePeak].ageTo}세</strong>입니다. `;
+    if (curScores.spouse >= 70) adviceText += '현재 배우자와의 관계가 돈독해지는 시기입니다.';
+    else if (curScores.love >= 70) adviceText += '현재 새로운 인연을 만나기 좋은 시기입니다.';
+
+    // 자식운 조언
+    adviceText += '<br><br>👶 <strong>자식운 포인트:</strong> ';
+    const childPeak = daeunScores.reduce((best, s, i) => s.children > daeunScores[best].children ? i : best, 0);
+    adviceText += `자식운이 가장 좋은 시기는 <strong>${daeunList[childPeak].ageFrom}~${daeunList[childPeak].ageTo}세</strong>입니다. `;
+    if (curScores.children >= 70) adviceText += '현재 자녀와의 관계가 좋거나, 자녀에게 경사가 있을 수 있습니다.';
+    else adviceText += '자녀 교육이나 관계에 있어 꾸준한 소통이 중요합니다.';
+
+    // 인생 최고 운기
+    adviceText += `<br><br>⭐ <strong>인생 최고 운기:</strong> <strong style="color:var(--gold)">${bestDaeun.ageFrom}~${bestDaeun.ageTo}세</strong>(${bestDaeun.yearFrom}~${bestDaeun.yearTo}년)에 종합 운기가 가장 높습니다. 이 시기를 잘 활용하세요!`;
+
+    document.getElementById('lifetimeAdvice').innerHTML = `
+        <div class="lifetime-advice-title">🔮 평생운 종합 해석</div>
+        <div class="lifetime-advice-text">${adviceText}</div>
+    `;
+}
+
+function getFortuneAdvice(dayGan, tenStarType, elements, totalScore, scores) {
+    const dayEl = CHEONGAN_ELEMENT[dayGan];
+    const elNames = ['목(木)', '화(火)', '토(土)', '금(金)', '수(水)'];
+    let advice = '';
+
+    // 전체 운세 기조
+    advice += `2026년 병오(丙午)년은 <strong style="color:var(--fire)">화(火)의 기운</strong>이 천간과 지지 모두에서 강하게 작용하는 해입니다. `;
+
+    // 십성 기반 조언
+    switch(tenStarType) {
+        case 'wealth':
+            advice += '당신에게는 <strong style="color:var(--gold)">재성(財星)의 해</strong>로, 재물과 관련된 기회가 찾아옵니다. 투자나 사업 확장에 유리하나, 과욕은 금물입니다. ';
+            break;
+        case 'power':
+            advice += '당신에게는 <strong style="color:var(--fire)">관성(官星)의 해</strong>로, 직장이나 사회적 지위에 변화가 있을 수 있습니다. 승진이나 책임의 증가가 예상됩니다. 압박감을 지혜로 극복하세요. ';
+            break;
+        case 'resource':
+            advice += '당신에게는 <strong style="color:var(--water)">인성(印星)의 해</strong>로, 학업이나 자기계발에 매우 유리합니다. 귀인의 도움이 있으며 내면의 성장이 크게 이루어집니다. ';
+            break;
+        case 'output':
+            advice += '당신에게는 <strong style="color:var(--wood)">식상(食傷)의 해</strong>로, 창의력과 표현력이 극대화됩니다. 예술, 창작, 소통 분야에서 빛을 발합니다. 다만 체력 관리에 신경 쓰세요. ';
+            break;
+        case 'peer':
+            advice += '당신에게는 <strong style="color:var(--metal)">비겁(比劫)의 해</strong>로, 경쟁과 협력이 공존하는 한 해입니다. 독립심이 강해지며, 인간관계에서 주도적 역할을 하게 됩니다. ';
+            break;
+    }
+
+    // 오행 균형 조언
+    if (elements[1] === 0) {
+        advice += '<br><br>📌 <strong>특별 길운:</strong> 사주에 부족한 화(火)를 2026년 세운이 채워줍니다. 활력과 열정이 되살아나는 한 해가 될 것입니다. 적극적으로 행동하세요.';
+    } else if (elements[1] >= 3) {
+        advice += '<br><br>⚠️ <strong>주의:</strong> 사주에 이미 화(火)가 많은데 병오년의 강한 화 기운이 더해져 과열될 수 있습니다. 심장, 혈압, 스트레스 관리에 각별히 주의하고, 수(水) 기운을 보충하세요(수영, 명상, 차분한 활동).';
+    }
+
+    // 건강 주의
+    if (scores.health < 55) {
+        advice += '<br><br>🏥 <strong>건강 관리:</strong> 화 기운이 강한 해이므로 심장, 혈압, 눈 건강에 주의하세요. 충분한 수분 섭취와 규칙적인 휴식이 중요합니다.';
+    }
+
+    // 행운의 방향
+    const luckyDirections = ['동쪽', '남쪽', '중앙', '서쪽', '북쪽'];
+    const luckyColors = ['초록색', '빨간색', '노란색', '흰색', '검은색/파란색'];
+    const luckyNums = ['3, 8', '2, 7', '5, 10', '4, 9', '1, 6'];
+    const needEl = elements.indexOf(Math.min(...elements));
+
+    advice += `<br><br>🍀 <strong>2026년 행운의 키워드</strong><br>`;
+    advice += `• 행운의 방향: <strong>${luckyDirections[needEl]}</strong><br>`;
+    advice += `• 행운의 색상: <strong>${luckyColors[needEl]}</strong><br>`;
+    advice += `• 행운의 숫자: <strong>${luckyNums[needEl]}</strong>`;
+
+    return advice;
 }
 </script>
 
