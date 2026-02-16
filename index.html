@@ -32,12 +32,27 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
     font-family: 'Noto Sans KR', sans-serif;
-    
+    background: transparent;
     color: var(--text);
     min-height: 100vh;
+    position: relative;
+}
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-color: #ede5d5;
     background-image:
-        radial-gradient(ellipse at 20% 50%, rgba(212,165,67,0.03) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 50%, rgba(196,64,64,0.03) 0%, transparent 50%);
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 1000'%3E%3Cdefs%3E%3ClinearGradient id='sky' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23ddd5c5'/%3E%3Cstop offset='0.3' stop-color='%23e5ddd0'/%3E%3Cstop offset='0.7' stop-color='%23ede5d5'/%3E%3Cstop offset='1' stop-color='%23ede5d5'/%3E%3C/linearGradient%3E%3ClinearGradient id='mist' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23ede5d5' stop-opacity='0'/%3E%3Cstop offset='0.2' stop-color='%23ede5d5' stop-opacity='0.85'/%3E%3Cstop offset='0.5' stop-color='%23ede5d5' stop-opacity='0.95'/%3E%3Cstop offset='0.8' stop-color='%23ede5d5' stop-opacity='0.85'/%3E%3Cstop offset='1' stop-color='%23ede5d5' stop-opacity='0'/%3E%3C/linearGradient%3E%3ClinearGradient id='fade' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23ede5d5' stop-opacity='0.9'/%3E%3Cstop offset='1' stop-color='%23ede5d5' stop-opacity='0'/%3E%3C/linearGradient%3E%3Cfilter id='ink'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='4' seed='2'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='3'/%3E%3C/filter%3E%3C/defs%3E%3Crect fill='url(%23sky)' width='1600' height='1000'/%3E%3Crect y='0' width='1600' height='200' fill='url(%23fade)'/%3E%3Cg opacity='0.15'%3E%3Ccircle cx='250' cy='150' r='55' fill='%23c0a878'/%3E%3Ccircle cx='275' cy='155' r='45' fill='%23ede5d5'/%3E%3C/g%3E%3Cg opacity='0.06'%3E%3Cellipse cx='900' cy='100' rx='140' ry='30' fill='%23c0a878'/%3E%3Cellipse cx='950' cy='95' rx='110' ry='24' fill='%23ddd5c5'/%3E%3Cellipse cx='860' cy='105' rx='90' ry='20' fill='%23ddd5c5'/%3E%3C/g%3E%3Cg opacity='0.05'%3E%3Cellipse cx='400' cy='130' rx='100' ry='22' fill='%23c0a878'/%3E%3Cellipse cx='440' cy='126' rx='75' ry='18' fill='%23ddd5c5'/%3E%3C/g%3E%3Cpath d='M-50 1000 L-50 480 Q0 400 80 440 Q160 350 260 420 Q340 300 440 380 Q520 280 600 340 Q650 300 700 330 L700 1000Z' fill='%23706050' opacity='0.22' filter='url(%23ink)'/%3E%3Cpath d='M-50 1000 L-50 520 Q30 460 120 490 Q200 400 300 460 Q380 350 460 410 Q530 340 600 380 Q660 340 700 360 L700 1000Z' fill='%23887868' opacity='0.12'/%3E%3Cpath d='M-50 1000 L-50 560 Q50 510 140 530 Q220 470 310 510 Q390 440 470 480 Q530 430 580 460 L580 1000Z' fill='%23a09888' opacity='0.06'/%3E%3Cpath d='M900 1000 L900 420 Q980 340 1080 390 Q1140 280 1250 340 Q1320 240 1420 300 Q1500 250 1560 280 Q1620 260 1680 290 L1680 1000Z' fill='%23605040' opacity='0.25' filter='url(%23ink)'/%3E%3Cpath d='M930 1000 L930 460 Q1010 390 1100 430 Q1180 330 1280 380 Q1350 290 1440 340 Q1510 300 1580 320 Q1640 290 1680 310 L1680 1000Z' fill='%23887060' opacity='0.13'/%3E%3Cpath d='M960 1000 L960 500 Q1040 440 1120 470 Q1200 380 1290 420 Q1360 350 1440 390 Q1500 360 1560 380 L1560 1000Z' fill='%23a09080' opacity='0.07'/%3E%3Cpath d='M350 1000 L350 580 Q430 530 530 560 Q620 500 720 540 Q790 480 870 520 Q920 490 980 510 L980 1000Z' fill='%23807060' opacity='0.12'/%3E%3Cpath d='M400 1000 L400 620 Q480 580 560 600 Q630 560 710 580 Q770 540 840 570 Q890 550 940 560 L940 1000Z' fill='%23908070' opacity='0.07'/%3E%3Crect y='440' width='1600' height='40' fill='url(%23mist)' opacity='0.7'/%3E%3Crect y='520' width='1600' height='25' fill='url(%23mist)' opacity='0.5'/%3E%3Crect y='620' width='1600' height='35' fill='url(%23mist)' opacity='0.4'/%3E%3Crect y='750' width='1600' height='20' fill='url(%23mist)' opacity='0.3'/%3E%3Cg opacity='0.1' stroke='%23605040' stroke-width='0.8' fill='none'%3E%3Cpath d='M80 600 Q85 570 90 580 Q95 555 100 570 Q105 545 108 560'/%3E%3Cpath d='M95 570 L97 530 M92 575 L90 535 M100 565 L102 528'/%3E%3Cpath d='M85 580 Q82 575 88 572 Q84 568 90 566'/%3E%3C/g%3E%3Cg opacity='0.08' stroke='%23605040' stroke-width='0.8' fill='none'%3E%3Cpath d='M1420 520 Q1425 485 1430 498 Q1435 470 1440 488 Q1445 462 1448 478'/%3E%3Cpath d='M1435 490 L1437 445 M1432 495 L1430 450 M1440 485 L1442 442'/%3E%3Cpath d='M1425 500 Q1422 494 1428 491 Q1424 487 1430 485'/%3E%3C/g%3E%3Cg opacity='0.07' stroke='%23605040' stroke-width='0.7' fill='none'%3E%3Cpath d='M750 640 Q755 610 760 622 Q765 598 770 614'/%3E%3Cpath d='M762 618 L764 580 M758 624 L756 586'/%3E%3Cpath d='M755 628 Q752 623 758 620'/%3E%3C/g%3E%3Cg opacity='0.04' stroke='%23605040' stroke-width='0.5' fill='none'%3E%3Cpath d='M500 700 Q510 692 520 696 Q530 688 540 694 Q550 685 560 690'/%3E%3Cpath d='M1100 670 Q1110 662 1120 666 Q1130 658 1140 664'/%3E%3C/g%3E%3Cg opacity='0.04' fill='%23605040'%3E%3Ccircle cx='160' cy='680' r='1.5'/%3E%3Ccircle cx='165' cy='675' r='1'/%3E%3Ccircle cx='155' cy='678' r='1.2'/%3E%3Ccircle cx='1350' cy='620' r='1.5'/%3E%3Ccircle cx='1345' cy='615' r='1'/%3E%3Ccircle cx='1355' cy='618' r='1.2'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+body > * {
+    position: relative;
+    z-index: 1;
 }
 .serif { font-family: 'Noto Serif KR', serif; }
 
@@ -887,7 +902,13 @@ select.form-input {
                 </select>
             </div>
         </div>
-        <button class="submit-btn" onclick="analyze()">사 주 분 석</button>
+        <div class="form-row">
+            <div class="form-group" style="flex:1">
+                <label class="form-label">이름 (성명학 분석용, 한글)</label>
+                <input id="userName" type="text" class="form-input" placeholder="예: 홍길동" maxlength="10" style="background:var(--bg-card);border:1px solid var(--border);color:var(--text);padding:12px 16px;border-radius:8px;font-size:15px;">
+            </div>
+        </div>
+        <button class="submit-btn" onclick="analyze()">종 합 분 석</button>
     </section>
 
     <!-- Result -->
@@ -929,6 +950,36 @@ select.form-input {
             <div id="fortuneScore" class="fortune-score"></div>
             <div id="fortuneMonthly" class="fortune-monthly"></div>
             <div id="fortuneAdvice" class="fortune-advice"></div>
+        </section>
+
+        <!-- 성명학 (Name Analysis) -->
+        <section class="analysis-card" id="nameSection">
+            <div class="section-title serif">姓名學 — 성명학 분석</div>
+            <div id="nameContent"></div>
+        </section>
+
+        <!-- 수리학 (Numerology) -->
+        <section class="analysis-card" id="numerologySection">
+            <div class="section-title serif">數理學 — 수리 분석</div>
+            <div id="numerologyContent"></div>
+        </section>
+
+        <!-- 점성학 (Astrology) -->
+        <section class="analysis-card" id="astrologySection">
+            <div class="section-title serif">占星學 — 서양 점성학 분석</div>
+            <div id="astrologyContent"></div>
+        </section>
+
+        <!-- 자미두수 (Purple Star Astrology) -->
+        <section class="analysis-card" id="ziWeiSection">
+            <div class="section-title serif">紫微斗數 — 자미두수 분석</div>
+            <div id="ziWeiContent"></div>
+        </section>
+
+        <!-- 신점 스타일 분석 (Shamanic Fortune) -->
+        <section class="analysis-card" id="shamanSection">
+            <div class="section-title serif">🔮 神占 — 신점 스타일 분석</div>
+            <div id="shamanContent"></div>
         </section>
 
         <!-- 평생운 (대운) -->
@@ -1191,6 +1242,15 @@ function analyze() {
     renderPersonality(dayP.gan, elements);
     renderDetail(dayP.gan, yearP, monthP, dayP, hourP, elements, gender);
     render2026Fortune(dayP.gan, dayP.ji, elements, gender);
+
+    // 새 분석 섹션들
+    const userName = document.getElementById('userName').value.trim();
+    renderNameAnalysis(userName, dayP.gan, elements);
+    renderNumerology(year, month, day, dayP.gan, elements);
+    renderAstrology(month, day, year, gender, dayP.gan, elements);
+    renderZiWei(yearP, monthP, dayP, hourP, gender, elements, year);
+    renderShamanFortune(dayP.gan, dayP.ji, yearP, monthP, hourP, elements, gender, year, month, day);
+
     renderLifetimeFortune(dayP.gan, dayP.ji, yearP.gan, monthP.gan, monthP.ji, elements, gender, year);
 
     document.getElementById('result').style.display = 'block';
@@ -2015,6 +2075,803 @@ function getFortuneAdvice(dayGan, tenStarType, elements, totalScore, scores) {
     advice += `• 행운의 숫자: <strong>${luckyNums[needEl]}</strong>`;
 
     return advice;
+}
+
+// ===== 성명학 (姓名學) =====
+const HANGUL_STROKES = {
+    'ㄱ':2,'ㄲ':4,'ㄴ':2,'ㄷ':3,'ㄸ':6,'ㄹ':5,'ㅁ':4,'ㅂ':4,'ㅃ':8,'ㅅ':2,'ㅆ':4,'ㅇ':1,'ㅈ':3,'ㅉ':6,'ㅊ':4,'ㅋ':3,'ㅌ':4,'ㅍ':4,'ㅎ':3,
+    'ㅏ':2,'ㅐ':3,'ㅑ':3,'ㅒ':4,'ㅓ':2,'ㅔ':3,'ㅕ':3,'ㅖ':4,'ㅗ':2,'ㅘ':4,'ㅙ':5,'ㅚ':3,'ㅛ':3,'ㅜ':2,'ㅝ':4,'ㅞ':5,'ㅟ':3,'ㅠ':3,'ㅡ':1,'ㅢ':2,'ㅣ':1,
+    '':0
+};
+const JONGSUNG_STROKES = [0,2,4,5,2,4,7,3,4,6,7,6,7,4,2,4,3,4,4,3,1,0];
+function getHangulStrokes(ch) {
+    const code = ch.charCodeAt(0);
+    if (code < 0xAC00 || code > 0xD7A3) return 0;
+    const offset = code - 0xAC00;
+    const cho = Math.floor(offset / (21 * 28));
+    const jung = Math.floor((offset % (21 * 28)) / 28);
+    const jong = offset % 28;
+    const CHO_LIST = ['ㄱ','ㄲ','ㄴ','ㄷ','ㄸ','ㄹ','ㅁ','ㅂ','ㅃ','ㅅ','ㅆ','ㅇ','ㅈ','ㅉ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
+    const JUNG_LIST = ['ㅏ','ㅐ','ㅑ','ㅒ','ㅓ','ㅔ','ㅕ','ㅖ','ㅗ','ㅘ','ㅙ','ㅚ','ㅛ','ㅜ','ㅝ','ㅞ','ㅟ','ㅠ','ㅡ','ㅢ','ㅣ'];
+    return (HANGUL_STROKES[CHO_LIST[cho]] || 0) + (HANGUL_STROKES[JUNG_LIST[jung]] || 0) + JONGSUNG_STROKES[jong];
+}
+function getNameStrokes(name) {
+    return [...name].map(ch => getHangulStrokes(ch));
+}
+
+const SURI_81 = [
+    '',
+    '대길 — 만물의 시작, 부귀영화의 수',
+    '흉 — 분리고독, 미완성의 수',
+    '길 — 복록풍성, 지혜와 발전의 수',
+    '흉 — 고난불안, 파멸의 수',
+    '길 — 건강장수, 복덕의 수',
+    '길 — 천덕을 받아 안정되는 수',
+    '길 — 독립독행, 강건한 의지의 수',
+    '길 — 인내와 노력으로 성공하는 수',
+    '흉 — 고독빈곤, 역경의 수',
+    '흉 — 공허허망, 단명의 수',
+    '길 — 만보갱신, 순조로운 발전의 수',
+    '흉 — 고독박명, 가정불화의 수',
+    '길 — 지모출중, 학예성취의 수',
+    '흉 — 이별고독, 파재의 수',
+    '길 — 복수겸전, 명망의 수',
+    '길 — 덕망높은 지도자의 수',
+    '길 — 권위강건, 돌파만난의 수',
+    '길 — 유지발전, 내실다복의 수',
+    '흉 — 풍파장해, 고난의 수',
+    '흉 — 허무공망, 단명의 수',
+    '길 — 독립권위, 두령의 수',
+    '흉 — 중도좌절, 가을 서리의 수',
+    '길 — 공명부귀, 성공발달의 수',
+    '길 — 출세성공, 재물풍부의 수',
+    '길 — 영웅호걸, 기비상반의 수',
+    '흉 — 영웅박명, 풍파의 수',
+    '흉 — 이별재난, 고독의 수',
+    '흉 — 변화불안, 파란의 수',
+    '길 — 지혜총명, 순풍에 돛단 수',
+    '흉 — 부침불정, 길흉상반의 수',
+    '길 — 순풍만범, 천행대통의 수',
+    '길 — 요행만사, 귀인의 도움을 받는 수',
+    '길 — 융창번영, 명예의 수',
+    '흉 — 파멸재앙, 가정불행의 수',
+    '길 — 온화평순, 문무겸비의 수',
+    '흉 — 풍파고생, 의협심의 수',
+    '길 — 인덕겸비, 문예발달의 수',
+    '흉 — 박약무력, 고독의 수',
+    '길 — 부귀장수, 영화의 수',
+    '흉 — 변화무상, 부침의 수',
+    '길 — 덕망높은 천부의 수',
+    '흉 — 산란이별, 고독의 수',
+    '흉 — 산재박명, 낭비의 수',
+    '흉 — 암흑파괴, 변사의 수',
+    '길 — 순풍만범, 영달의 수',
+    '흉 — 파산실패, 고독의 수',
+    '길 — 고고독립, 덕망가의 수',
+    '길 — 유덕겸비, 가정화목의 수',
+    '흉 — 일성일패, 길흉반반의 수',
+    '흉 — 혼돈미개, 부침의 수',
+    '길 — 성대운기, 장래유망의 수',
+    '길 — 만사형통, 선견지명의 수',
+    '흉 — 내우외환, 장애의 수',
+    '흉 — 다재다난, 불행의 수',
+    '흉 — 불안재해, 좌절의 수',
+    '흉 — 만성진퇴, 저조의 수',
+    '길 — 전후흥패, 말년행복의 수',
+    '흉 — 고독암영, 재난의 수',
+    '흉 — 불우한 수',
+    '흉 — 무기력, 의지부족의 수',
+    '길 — 부귀영화, 만사형통의 수',
+    '흉 — 쇠퇴산란, 불안의 수',
+    '길 — 만사항통, 교제원만의 수',
+    '흉 — 고난역경, 불안의 수',
+    '길 — 유순평화, 만사완성의 수',
+    '흉 — 진퇴불결, 내외불화의 수',
+    '길 — 순발달성, 번영의 수',
+    '길 — 지혜명석, 발명의 수',
+    '흉 — 공허무실, 고통의 수',
+    '흉 — 최극쇠운, 암흑의 수',
+    '길 — 선길후흉, 경솔의 수',
+    '흉 — 희비쌍관, 무력의 수',
+    '흉 — 무력고독, 흉재의 수',
+    '흉 — 후복전흉, 변화의 수',
+    '흉 — 반길반흉, 관재의 수',
+    '흉 — 전흉후길, 만년행복의 수',
+    '길 — 미우겸비, 사업성공의 수',
+    '흉 — 종국비애, 곤란의 수',
+    '흉 — 진퇴무사, 귀인부재의 수',
+    '길 — 순풍대길, 만사형통의 수'
+];
+
+function renderNameAnalysis(name, dayGanIdx, elements) {
+    const section = document.getElementById('nameContent');
+    if (!name || name.length < 2) {
+        section.innerHTML = `<div style="text-align:center;color:var(--text-muted);padding:30px;">이름을 입력하면 성명학 분석이 표시됩니다.</div>`;
+        return;
+    }
+    const strokes = getNameStrokes(name);
+    const totalStrokes = strokes.reduce((a, b) => a + b, 0);
+
+    // 원형이정 (천격, 인격, 지격, 외격, 총격) 계산
+    let cheonGyeok, inGyeok, jiGyeok, oeGyeok, chongGyeok;
+    if (name.length === 2) {
+        cheonGyeok = strokes[0] + 1;
+        inGyeok = strokes[0] + strokes[1];
+        jiGyeok = strokes[1] + 1;
+        oeGyeok = 2;
+        chongGyeok = totalStrokes;
+    } else if (name.length === 3) {
+        cheonGyeok = strokes[0] + strokes[1];
+        inGyeok = strokes[1] + strokes[2];
+        jiGyeok = strokes[2] + 1;
+        oeGyeok = strokes[0] + 1;
+        chongGyeok = totalStrokes;
+    } else {
+        cheonGyeok = strokes[0] + strokes[1];
+        inGyeok = strokes[1] + strokes[2];
+        jiGyeok = strokes[2] + (strokes[3] || 0);
+        oeGyeok = strokes[0] + (strokes[3] || 0);
+        chongGyeok = totalStrokes;
+    }
+
+    const NAME_FIVE = ['목(木)','화(火)','토(土)','금(金)','수(水)'];
+    const nameElFn = (n) => { const m = n % 10; if (m === 1 || m === 2) return 0; if (m === 3 || m === 4) return 1; if (m === 5 || m === 6) return 2; if (m === 7 || m === 8) return 3; return 4; };
+
+    const cheonEl = nameElFn(cheonGyeok);
+    const inEl = nameElFn(inGyeok);
+    const jiEl = nameElFn(jiGyeok);
+    const oeEl = nameElFn(oeGyeok);
+    const chongEl = nameElFn(chongGyeok);
+
+    const suriIdx81 = (n) => { let v = n % 81; return v === 0 ? 81 : v; };
+    const getSuriResult = (n) => {
+        const idx = suriIdx81(n);
+        return SURI_81[idx] || '평 — 보통';
+    };
+    const isGil = (n) => getSuriResult(n).startsWith('길') || getSuriResult(n).startsWith('대길');
+
+    // 상생/상극 관계
+    const SANG_SAENG = [[0,1],[1,2],[2,3],[3,4],[4,0]]; // 목→화, 화→토, 토→금, 금→수, 수→목
+    const isRelGood = (a, b) => {
+        if (a === b) return true;
+        return SANG_SAENG.some(([x, y]) => (x === a && y === b) || (x === b && y === a));
+    };
+
+    const inJiRel = isRelGood(inEl, jiEl);
+    const cheonInRel = isRelGood(cheonEl, inEl);
+    const overallGil = [isGil(cheonGyeok), isGil(inGyeok), isGil(jiGyeok), isGil(chongGyeok)].filter(Boolean).length;
+
+    // 일간 오행과 이름의 조화
+    const dayEl = CHEONGAN_ELEMENT[dayGanIdx];
+    const nameMatchDay = isRelGood(inEl, dayEl);
+
+    let gradeEmoji, gradeText;
+    if (overallGil >= 4 && inJiRel && nameMatchDay) { gradeEmoji = '🌟'; gradeText = '대길 (大吉)'; }
+    else if (overallGil >= 3 && inJiRel) { gradeEmoji = '✨'; gradeText = '길 (吉)'; }
+    else if (overallGil >= 2) { gradeEmoji = '🔸'; gradeText = '평길 (平吉)'; }
+    else if (overallGil >= 1) { gradeEmoji = '🔹'; gradeText = '평 (平)'; }
+    else { gradeEmoji = '⚠️'; gradeText = '흉 (凶)'; }
+
+    let html = `<div style="text-align:center;margin-bottom:20px;">
+        <div style="font-size:32px;font-family:'Noto Serif KR',serif;color:var(--gold);letter-spacing:8px;margin-bottom:8px;">${name}</div>
+        <div style="font-size:14px;color:var(--text-muted);">총 획수: ${totalStrokes}획 (${strokes.map((s,i) => name[i]+':'+s+'획').join(', ')})</div>
+        <div style="font-size:20px;margin-top:12px;">${gradeEmoji} <strong style="color:var(--gold)">${gradeText}</strong></div>
+    </div>`;
+
+    // 오격 표시
+    html += `<div class="analysis-grid" style="grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px;">`;
+    const gyeoks = [
+        { name: '천격(天格)', val: cheonGyeok, el: cheonEl, desc: '선천운·조상운' },
+        { name: '인격(人格)', val: inGyeok, el: inEl, desc: '주운·성격·중년운' },
+        { name: '지격(地格)', val: jiGyeok, el: jiEl, desc: '초년운·기초운' },
+        { name: '외격(外格)', val: oeGyeok, el: oeEl, desc: '대인운·사회운' },
+        { name: '총격(總格)', val: chongGyeok, el: chongEl, desc: '총운·후반생' },
+    ];
+    gyeoks.forEach(g => {
+        const suri = getSuriResult(g.val);
+        const gilClass = suri.startsWith('길') || suri.startsWith('대길') ? 'color:var(--wood)' : suri.startsWith('흉') ? 'color:var(--fire)' : 'color:var(--text-secondary)';
+        html += `<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;">
+            <div style="font-size:12px;color:var(--text-muted)">${g.name}</div>
+            <div style="font-size:24px;font-weight:700;color:var(--gold);margin:4px 0;">${g.val}</div>
+            <div style="font-size:11px;color:${ELEMENT_COLORS[g.el]};margin-bottom:4px;">${NAME_FIVE[g.el]}</div>
+            <div style="font-size:11px;${gilClass}">${suri.split('—')[0].trim()}</div>
+            <div style="font-size:10px;color:var(--text-muted);margin-top:4px;">${g.desc}</div>
+        </div>`;
+    });
+    html += `</div>`;
+
+    // 오행 조화 분석
+    html += `<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:12px;">
+        <div style="font-weight:600;color:var(--gold);margin-bottom:8px;">🔄 인격-지격 관계</div>
+        <div style="font-size:14px;color:var(--text-secondary);">${NAME_FIVE[inEl]} → ${NAME_FIVE[jiEl]}: ${inJiRel ? '<span style="color:var(--wood)">상생 관계 (조화로움)</span>' : '<span style="color:var(--fire)">상극 관계 (갈등 주의)</span>'}</div>
+    </div>`;
+    html += `<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:16px;">
+        <div style="font-weight:600;color:var(--gold);margin-bottom:8px;">☯️ 이름과 사주의 조화</div>
+        <div style="font-size:14px;color:var(--text-secondary);">일간 오행(${ELEMENT_NAMES[dayEl]})과 인격 오행(${NAME_FIVE[inEl]}): ${nameMatchDay ? '<span style="color:var(--wood)">조화로운 관계 — 이름이 사주를 보완합니다</span>' : '<span style="color:var(--fire)">불조화 — 이름이 사주와 충돌할 수 있습니다</span>'}</div>
+    </div>`;
+
+    section.innerHTML = html;
+}
+
+// ===== 수리학 (數理學 / Numerology) =====
+function renderNumerology(year, month, day, dayGanIdx, elements) {
+    const section = document.getElementById('numerologyContent');
+
+    // 생명수 (Life Path Number) 계산
+    const sumDigits = (n) => { let s = 0; while (n > 0) { s += n % 10; n = Math.floor(n / 10); } return s; };
+    const reduceToSingle = (n) => { while (n > 9 && n !== 11 && n !== 22 && n !== 33) { n = sumDigits(n); } return n; };
+    const lifePathRaw = sumDigits(year) + sumDigits(month) + sumDigits(day);
+    const lifePath = reduceToSingle(lifePathRaw);
+
+    // 탄생수 (Birthday Number)
+    const birthdayNum = reduceToSingle(day);
+
+    // 태양수 (Year Number)
+    const yearNum = reduceToSingle(sumDigits(year));
+
+    // 운명수 (Destiny Number) - year+month+day 각각 환원 후 합산
+    const destinyRaw = reduceToSingle(sumDigits(year)) + reduceToSingle(month) + reduceToSingle(day);
+    const destinyNum = reduceToSingle(destinyRaw);
+
+    // 성숙수 (Maturity Number) - lifePath + destiny
+    const maturityNum = reduceToSingle(lifePath + destinyNum);
+
+    // 2026 개인년수
+    const personalYear = reduceToSingle(reduceToSingle(month) + reduceToSingle(day) + reduceToSingle(sumDigits(2026)));
+
+    const NUM_MEANINGS = {
+        1: { title: '리더 / 개척자', trait: '독립적이고 창의적인 리더십을 지닙니다. 새로운 것을 시작하는 힘이 강합니다.', career: '기업가, CEO, 발명가', element: '화(火)', color: '🔴 빨강' },
+        2: { title: '조화자 / 중재인', trait: '협력과 조화를 중시하며 감수성이 뛰어납니다. 외교적 능력이 있습니다.', career: '상담사, 외교관, 예술가', element: '수(水)', color: '🟠 주황' },
+        3: { title: '표현자 / 소통가', trait: '자기표현에 뛰어나며 사교적입니다. 예술적 재능이 있습니다.', career: '작가, 배우, 디자이너', element: '목(木)', color: '🟡 노랑' },
+        4: { title: '건설자 / 실천가', trait: '안정과 질서를 추구하며 실용적입니다. 체계적인 사고를 합니다.', career: '건축가, 엔지니어, 관리자', element: '토(土)', color: '🟢 초록' },
+        5: { title: '모험가 / 자유인', trait: '변화와 모험을 즐기며 다재다능합니다. 여행과 경험을 추구합니다.', career: '여행가, 마케터, 저널리스트', element: '금(金)', color: '🔵 파랑' },
+        6: { title: '봉사자 / 보호자', trait: '가정과 공동체를 중시합니다. 책임감이 강하고 헌신적입니다.', career: '의사, 교사, 사회복지사', element: '토(土)', color: '💜 남색' },
+        7: { title: '탐구자 / 분석가', trait: '깊은 사색과 분석을 즐깁니다. 영적·지적 탐구심이 강합니다.', career: '연구원, 철학자, 프로그래머', element: '수(水)', color: '🟣 보라' },
+        8: { title: '경영자 / 성취가', trait: '물질적 성공과 권력에 강합니다. 사업 수완이 뛰어납니다.', career: '사업가, 금융인, 변호사', element: '금(金)', color: '🩷 분홍' },
+        9: { title: '인도주의자 / 완성자', trait: '박애와 이상을 추구합니다. 넓은 시야와 높은 이상이 있습니다.', career: '예술가, NGO활동가, 치료사', element: '화(火)', color: '🤍 흰색' },
+        11: { title: '영감의 마스터', trait: '직관력과 영적 감수성이 특별합니다. 마스터 넘버로 높은 잠재력을 가집니다.', career: '영적 지도자, 예술가, 발명가', element: '수(水)', color: '✨ 은색' },
+        22: { title: '건축의 마스터', trait: '큰 꿈을 현실로 만드는 능력이 있습니다. 마스터 넘버로 대규모 프로젝트에 적합합니다.', career: '대기업 경영, 국제기구, 건축가', element: '토(土)', color: '🥇 금색' },
+        33: { title: '치유의 마스터', trait: '최고 수준의 마스터 넘버입니다. 인류를 위한 봉사와 치유의 사명이 있습니다.', career: '치유사, 종교 지도자, 교육자', element: '목(木)', color: '💎 다이아몬드' },
+    };
+
+    const PY_MEANINGS = {
+        1: '새로운 시작의 해 — 새 프로젝트, 새 관계가 열리는 시기입니다.',
+        2: '인내와 협력의 해 — 관계를 다지고 기다림이 필요한 시기입니다.',
+        3: '자기표현의 해 — 창의성이 폭발하고 사교가 활발해집니다.',
+        4: '기반 다지기의 해 — 노력과 절제로 토대를 만드는 시기입니다.',
+        5: '변화와 전환의 해 — 여행, 이사, 전환점이 찾아옵니다.',
+        6: '가정과 책임의 해 — 가족, 결혼, 부동산에 변화가 있습니다.',
+        7: '성찰과 탐구의 해 — 내면을 돌아보고 공부에 좋은 시기입니다.',
+        8: '성취와 수확의 해 — 그동안의 노력이 결실을 맺습니다.',
+        9: '완성과 정리의 해 — 한 주기가 마무리되며 비움이 필요합니다.',
+        11: '영감의 해 — 직관이 강해지고 영적 성장이 일어납니다.',
+        22: '대성취의 해 — 큰 프로젝트가 현실화됩니다.',
+        33: '봉사의 해 — 타인을 위한 헌신이 빛나는 시기입니다.',
+    };
+
+    const lpData = NUM_MEANINGS[lifePath] || NUM_MEANINGS[lifePath > 9 ? sumDigits(lifePath) : lifePath] || NUM_MEANINGS[1];
+    const pyData = PY_MEANINGS[personalYear] || PY_MEANINGS[personalYear > 9 ? sumDigits(personalYear) : personalYear] || PY_MEANINGS[1];
+
+    let html = `<div style="text-align:center;margin-bottom:20px;">
+        <div style="font-size:48px;font-weight:900;color:var(--gold);font-family:'Noto Serif KR',serif;">${lifePath}</div>
+        <div style="font-size:14px;color:var(--text-muted);">당신의 생명수 (Life Path Number)</div>
+        <div style="font-size:18px;color:var(--gold-light);margin-top:6px;font-weight:600;">${lpData.title}</div>
+    </div>`;
+
+    html += `<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:16px;">
+        <div style="font-size:14px;color:var(--text-secondary);line-height:1.7;">${lpData.trait}</div>
+        <div style="margin-top:10px;font-size:13px;">
+            <span style="color:var(--text-muted)">적합 직업:</span> <span style="color:var(--text-secondary)">${lpData.career}</span><br>
+            <span style="color:var(--text-muted)">대응 오행:</span> <span style="color:var(--text-secondary)">${lpData.element}</span> ·
+            <span style="color:var(--text-muted)">행운 색상:</span> <span style="color:var(--text-secondary)">${lpData.color}</span>
+        </div>
+    </div>`;
+
+    // 핵심 수리 테이블
+    html += `<div class="analysis-grid" style="grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:16px;">`;
+    const nums = [
+        { label: '탄생수', val: birthdayNum, desc: '기본 성향' },
+        { label: '운명수', val: destinyNum, desc: '인생 목표' },
+        { label: '성숙수', val: maturityNum, desc: '후반기 운' },
+    ];
+    nums.forEach(n => {
+        const nd = NUM_MEANINGS[n.val] || NUM_MEANINGS[n.val > 9 ? sumDigits(n.val) : n.val] || NUM_MEANINGS[1];
+        html += `<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;">
+            <div style="font-size:11px;color:var(--text-muted)">${n.label}</div>
+            <div style="font-size:28px;font-weight:700;color:var(--gold);margin:4px 0;">${n.val}</div>
+            <div style="font-size:12px;color:var(--text-secondary)">${nd.title}</div>
+            <div style="font-size:10px;color:var(--text-muted);margin-top:2px;">${n.desc}</div>
+        </div>`;
+    });
+    html += `</div>`;
+
+    // 2026 개인년수
+    html += `<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:16px;">
+        <div style="font-weight:600;color:var(--gold);margin-bottom:8px;">📅 2026년 개인년수: <span style="font-size:22px;">${personalYear}</span></div>
+        <div style="font-size:14px;color:var(--text-secondary);line-height:1.6;">${pyData}</div>
+    </div>`;
+
+    section.innerHTML = html;
+}
+
+// ===== 점성학 (占星學 / Western Astrology) =====
+function renderAstrology(month, day, year, gender, dayGanIdx, elements) {
+    const section = document.getElementById('astrologyContent');
+
+    // 별자리 계산
+    const ZODIAC = [
+        { name: '물병자리', symbol: '♒', hanja: '寶甁宮', start: [1,20], end: [2,18], element: '바람', ruling: '천왕성(Uranus)', trait: '독창적이고 인도주의적이며 진보적인 사고를 가집니다. 자유를 사랑하고 독립심이 강합니다.', love: '지적 교감을 중시하며 자유로운 관계를 원합니다.', career: '과학, IT, 발명, 사회운동', lucky: '토요일', color: '파랑', num: '4, 7, 11' },
+        { name: '물고기자리', symbol: '♓', hanja: '雙魚宮', start: [2,19], end: [3,20], element: '물', ruling: '해왕성(Neptune)', trait: '직관적이고 감성이 풍부하며 예술적 재능이 뛰어납니다. 공감 능력이 높습니다.', love: '로맨틱하고 헌신적이며 상대를 깊이 이해합니다.', career: '예술, 음악, 심리학, 종교', lucky: '목요일', color: '바다색', num: '3, 9, 12' },
+        { name: '양자리', symbol: '♈', hanja: '白羊宮', start: [3,21], end: [4,19], element: '불', ruling: '화성(Mars)', trait: '용감하고 열정적이며 개척정신이 강합니다. 리더십이 있고 결단력이 뛰어납니다.', love: '열정적이고 직진형이며 적극적으로 사랑을 표현합니다.', career: '군인, 운동선수, 기업가, 외과의', lucky: '화요일', color: '빨강', num: '1, 8, 17' },
+        { name: '황소자리', symbol: '♉', hanja: '金牛宮', start: [4,20], end: [5,20], element: '땅', ruling: '금성(Venus)', trait: '안정적이고 신뢰할 수 있으며 인내심이 강합니다. 감각적 즐거움을 추구합니다.', love: '한번 사랑하면 깊고 오래가며 충성스럽습니다.', career: '금융, 요리사, 건축, 농업', lucky: '금요일', color: '초록', num: '2, 6, 9' },
+        { name: '쌍둥이자리', symbol: '♊', hanja: '雙子宮', start: [5,21], end: [6,21], element: '바람', ruling: '수성(Mercury)', trait: '호기심이 왕성하고 소통 능력이 뛰어납니다. 다재다능하고 적응력이 강합니다.', love: '대화가 잘 통하는 상대를 원하며 지적 자극을 추구합니다.', career: '작가, 기자, 통역, 마케팅', lucky: '수요일', color: '노랑', num: '5, 7, 14' },
+        { name: '게자리', symbol: '♋', hanja: '巨蟹宮', start: [6,22], end: [7,22], element: '물', ruling: '달(Moon)', trait: '감수성이 풍부하고 가정적이며 보호본능이 강합니다. 직감력이 뛰어납니다.', love: '헌신적이고 가정을 소중히 여기며 깊은 정을 줍니다.', career: '요리, 간호, 부동산, 역사학', lucky: '월요일', color: '은색', num: '2, 7, 11' },
+        { name: '사자자리', symbol: '♌', hanja: '獅子宮', start: [7,23], end: [8,22], element: '불', ruling: '태양(Sun)', trait: '자신감이 넘치고 카리스마가 있으며 관대합니다. 무대 위에서 빛나는 타입입니다.', love: '화려하고 드라마틱한 사랑을 추구하며 충성스럽습니다.', career: '연예인, CEO, 정치인, 디자이너', lucky: '일요일', color: '금색', num: '1, 3, 10' },
+        { name: '처녀자리', symbol: '♍', hanja: '處女宮', start: [8,23], end: [9,22], element: '땅', ruling: '수성(Mercury)', trait: '분석적이고 꼼꼼하며 완벽주의적입니다. 실용적이고 봉사정신이 있습니다.', love: '신중하고 세심하게 사랑을 표현하며 진실된 관계를 추구합니다.', career: '의사, 회계사, 편집자, 연구원', lucky: '수요일', color: '베이지', num: '5, 14, 23' },
+        { name: '천칭자리', symbol: '♎', hanja: '天秤宮', start: [9,23], end: [10,23], element: '바람', ruling: '금성(Venus)', trait: '조화와 균형을 추구하며 심미안이 뛰어납니다. 공정하고 사교적입니다.', love: '파트너십을 중시하며 아름다운 관계를 만들어갑니다.', career: '법률, 디자인, 외교, 예술', lucky: '금요일', color: '분홍', num: '4, 6, 13' },
+        { name: '전갈자리', symbol: '♏', hanja: '天蝎宮', start: [10,24], end: [11,22], element: '물', ruling: '명왕성(Pluto)', trait: '깊은 통찰력과 강한 의지를 가졌습니다. 비밀스럽고 변혁적입니다.', love: '강렬하고 깊은 사랑을 하며 질투심도 강합니다.', career: '심리학, 수사관, 외과의, 연구자', lucky: '화요일', color: '검정/진홍', num: '8, 11, 18' },
+        { name: '사수자리', symbol: '♐', hanja: '射手宮', start: [11,23], end: [12,21], element: '불', ruling: '목성(Jupiter)', trait: '낙관적이고 모험심이 강하며 철학적입니다. 자유를 사랑하고 탐구심이 왕성합니다.', love: '자유로운 관계를 원하며 정신적 교감을 중시합니다.', career: '교수, 여행가, 출판, 종교인', lucky: '목요일', color: '보라', num: '3, 7, 9' },
+        { name: '염소자리', symbol: '♑', hanja: '磨羯宮', start: [12,22], end: [1,19], element: '땅', ruling: '토성(Saturn)', trait: '야심차고 근면하며 현실적입니다. 목표를 향해 꾸준히 나아갑니다.', love: '진지하고 신중한 연애를 하며 결혼을 목표로 합니다.', career: '경영자, 공무원, 건축가, 정치인', lucky: '토요일', color: '갈색/검정', num: '1, 4, 8' },
+    ];
+
+    let zodiac = null;
+    for (const z of ZODIAC) {
+        const [sm, sd] = z.start;
+        const [em, ed] = z.end;
+        if (sm <= em) {
+            if ((month === sm && day >= sd) || (month === em && day <= ed) || (month > sm && month < em)) { zodiac = z; break; }
+        } else {
+            if ((month === sm && day >= sd) || (month === em && day <= ed) || month > sm || month < em) { zodiac = z; break; }
+        }
+    }
+    if (!zodiac) zodiac = ZODIAC[0];
+
+    // 사주 오행과 점성 원소 매핑
+    const ASTRO_ELEMENT_MAP = { '불': '화(火)', '땅': '토(土)', '바람': '목(木)', '물': '수(水)' };
+    const sajuMatch = ASTRO_ELEMENT_MAP[zodiac.element];
+
+    // 행성 위치 (간단 계산 - 출생년도 기반 근사)
+    const planets = [
+        { name: '목성', symbol: '♃', cycle: 11.86, desc: '확장·행운' },
+        { name: '토성', symbol: '♄', cycle: 29.46, desc: '시련·성숙' },
+    ];
+    const getApproxSign = (year, cycle) => {
+        const base = 2000;
+        const offset = ((year - base) / cycle) % 12;
+        const idx = Math.floor(((offset % 12) + 12) % 12);
+        return ZODIAC[idx].name;
+    };
+
+    let html = `<div style="text-align:center;margin-bottom:20px;">
+        <div style="font-size:56px;margin-bottom:4px;">${zodiac.symbol}</div>
+        <div style="font-size:24px;font-weight:700;color:var(--gold);font-family:'Noto Serif KR',serif;">${zodiac.name}</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-top:4px;">${zodiac.hanja} · ${zodiac.element} 원소 · ${zodiac.ruling}</div>
+    </div>`;
+
+    html += `<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:12px;">
+        <div style="font-weight:600;color:var(--gold);margin-bottom:8px;">🌟 핵심 성격</div>
+        <div style="font-size:14px;color:var(--text-secondary);line-height:1.7;">${zodiac.trait}</div>
+    </div>`;
+
+    html += `<div class="analysis-grid" style="gap:12px;margin-bottom:12px;">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;">
+            <div style="font-weight:600;color:var(--gold);margin-bottom:6px;">❤️ 연애 성향</div>
+            <div style="font-size:13px;color:var(--text-secondary);line-height:1.6;">${zodiac.love}</div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;">
+            <div style="font-weight:600;color:var(--gold);margin-bottom:6px;">💼 적합 직업</div>
+            <div style="font-size:13px;color:var(--text-secondary);line-height:1.6;">${zodiac.career}</div>
+        </div>
+    </div>`;
+
+    html += `<div class="analysis-grid" style="grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:16px;">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center;">
+            <div style="font-size:11px;color:var(--text-muted)">행운의 요일</div>
+            <div style="font-size:16px;color:var(--gold);margin-top:4px;">${zodiac.lucky}</div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center;">
+            <div style="font-size:11px;color:var(--text-muted)">행운의 색상</div>
+            <div style="font-size:16px;color:var(--gold);margin-top:4px;">${zodiac.color}</div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center;">
+            <div style="font-size:11px;color:var(--text-muted)">행운의 숫자</div>
+            <div style="font-size:16px;color:var(--gold);margin-top:4px;">${zodiac.num}</div>
+        </div>
+    </div>`;
+
+    // 사주-점성 융합 분석
+    html += `<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:16px;">
+        <div style="font-weight:600;color:var(--gold);margin-bottom:8px;">☯️ 사주-점성 융합 분석</div>
+        <div style="font-size:13px;color:var(--text-secondary);line-height:1.7;">
+            점성학 원소 <strong>${zodiac.element}</strong>(${sajuMatch})과 일간 오행 <strong>${ELEMENT_NAMES[CHEONGAN_ELEMENT[dayGanIdx]]}</strong>의 관계를 통해 보면,
+            ${sajuMatch === ELEMENT_NAMES[CHEONGAN_ELEMENT[dayGanIdx]] ? '동일한 원소로 해당 기질이 매우 강하게 나타납니다. 그 에너지가 과할 수 있으니 반대 원소로 균형을 맞추세요.' : '서로 다른 원소가 만나 다양한 면모를 보여줍니다. 동서양 운명학 모두에서 다채로운 가능성을 지닌 것으로 해석됩니다.'}
+        </div>
+    </div>`;
+
+    section.innerHTML = html;
+}
+
+// ===== 자미두수 (紫微斗數) =====
+function renderZiWei(yearP, monthP, dayP, hourP, gender, elements, birthYear) {
+    const section = document.getElementById('ziWeiContent');
+
+    // 자미두수 주성(主星) 14개
+    const ZI_WEI_STARS = [
+        { name: '자미성', hanja: '紫微', desc: '제왕의 별 — 리더십, 존엄, 통솔력', trait: '고귀한 기품과 통솔력을 가지며 타인을 이끄는 능력이 있습니다.' },
+        { name: '천기성', hanja: '天機', desc: '지혜의 별 — 총명, 기획, 변통', trait: '머리가 뛰어나고 기획력이 좋으나 우유부단할 수 있습니다.' },
+        { name: '태양성', hanja: '太陽', desc: '광명의 별 — 명예, 박애, 봉사', trait: '밝고 활발하며 타인을 위해 희생하는 마음이 큽니다.' },
+        { name: '무곡성', hanja: '武曲', desc: '재물의 별 — 결단, 재물, 무용', trait: '결단력이 있고 재물 관리에 뛰어나며 강인한 의지가 있습니다.' },
+        { name: '천동성', hanja: '天同', desc: '복덕의 별 — 온화, 낙천, 복록', trait: '성격이 온화하고 복이 있으나 게으를 수 있습니다.' },
+        { name: '염정성', hanja: '廉貞', desc: '감정의 별 — 예술, 감정, 복잡', trait: '예술적 감각이 뛰어나고 감정이 풍부하지만 감정 기복이 클 수 있습니다.' },
+        { name: '천부성', hanja: '天府', desc: '재고의 별 — 안정, 재물, 보수', trait: '안정을 추구하고 재물을 잘 보관하며 신뢰받는 사람입니다.' },
+        { name: '태음성', hanja: '太陰', desc: '달의 별 — 우아, 섬세, 재물', trait: '섬세하고 우아하며 재물운이 좋고 부동산과 인연이 있습니다.' },
+        { name: '탐랑성', hanja: '貪狼', desc: '욕망의 별 — 다재, 매력, 욕심', trait: '다재다능하고 매력적이지만 욕심이 과할 수 있습니다.' },
+        { name: '거문성', hanja: '巨門', desc: '구설의 별 — 분석, 논쟁, 탐구', trait: '분석력이 뛰어나고 말을 잘하지만 논쟁을 일으킬 수 있습니다.' },
+        { name: '천상성', hanja: '天相', desc: '인수의 별 — 보좌, 공정, 교제', trait: '공정하고 사교적이며 보좌 능력이 뛰어납니다.' },
+        { name: '천량성', hanja: '天梁', desc: '음덕의 별 — 보호, 장수, 해결', trait: '어려움을 해결하는 능력이 있고 장수와 음덕의 복이 있습니다.' },
+        { name: '칠살성', hanja: '七殺', desc: '장군의 별 — 권위, 결단, 고독', trait: '위엄과 결단력이 있으나 고독할 수 있습니다. 군인이나 경찰에 적합합니다.' },
+        { name: '파군성', hanja: '破軍', desc: '파괴와 재건의 별 — 변혁, 모험, 파괴', trait: '기존의 것을 부수고 새것을 만드는 힘이 강합니다. 혁명가 기질이 있습니다.' },
+    ];
+
+    // 자미두수 12궁 (Twelve Palaces)
+    const TWELVE_PALACES = [
+        { name: '명궁', hanja: '命宮', desc: '본인의 성격과 외모, 인생 전반의 방향' },
+        { name: '형제궁', hanja: '兄弟宮', desc: '형제자매 및 가까운 친구와의 관계' },
+        { name: '부처궁', hanja: '夫妻宮', desc: '배우자, 연인과의 관계 및 결혼운' },
+        { name: '자녀궁', hanja: '子女宮', desc: '자녀와의 관계 및 자녀운' },
+        { name: '재백궁', hanja: '財帛宮', desc: '재물 상태와 돈을 버는 방식' },
+        { name: '질액궁', hanja: '疾厄宮', desc: '건강 상태와 주의해야 할 질병' },
+        { name: '천이궁', hanja: '遷移宮', desc: '이동, 여행, 외부 환경과의 관계' },
+        { name: '교우궁', hanja: '交友宮', desc: '친구, 동료, 부하직원과의 관계' },
+        { name: '관록궁', hanja: '官祿宮', desc: '직업, 사업, 학업 관련 운세' },
+        { name: '전택궁', hanja: '田宅宮', desc: '부동산, 주거환경, 가정 분위기' },
+        { name: '복덕궁', hanja: '福德宮', desc: '정신적 행복, 취미, 전생의 복' },
+        { name: '부모궁', hanja: '父母宮', desc: '부모와의 관계, 윗사람과의 관계' },
+    ];
+
+    // 간단 계산: 출생 데이터로 주성 배치 결정
+    const dayGanIdx = dayP.gan;
+    const dayJiIdx = dayP.ji;
+    const monthGanIdx = monthP.gan;
+    const yearJiIdx = yearP.ji;
+    const hourIdx = hourP ? hourP.ji : 6;
+
+    // 명궁 위치 결정 (간소화: 월지+시지 기반)
+    const mingGongIdx = (monthP.ji + hourIdx) % 12;
+
+    // 자미성 위치 결정 (간소화: 일간 기반)
+    const ziWeiPos = (dayGanIdx + dayJiIdx) % 12;
+
+    // 각 궁에 주성 배치 (간소화된 알고리즘)
+    const palaceStars = TWELVE_PALACES.map((palace, i) => {
+        const palaceIdx = (mingGongIdx + i) % 12;
+        const starIdx1 = (ziWeiPos + palaceIdx) % 14;
+        const starIdx2 = (ziWeiPos + palaceIdx + 7) % 14;
+        const mainStar = ZI_WEI_STARS[starIdx1];
+        const subStar = starIdx1 !== starIdx2 ? ZI_WEI_STARS[starIdx2] : null;
+
+        // 궁의 길흉 판단 (간소화)
+        const elMatch = CHEONGAN_ELEMENT[dayGanIdx];
+        const palaceEl = palaceIdx % 5;
+        const SANG_SAENG_ARR = [[0,1],[1,2],[2,3],[3,4],[4,0]];
+        const isSaeng = SANG_SAENG_ARR.some(([a,b]) => (a === elMatch && b === palaceEl) || (a === palaceEl && b === elMatch));
+        const score = isSaeng ? Math.floor(Math.random() * 20) + 70 : (elMatch === palaceEl ? Math.floor(Math.random() * 15) + 75 : Math.floor(Math.random() * 25) + 50);
+
+        return { ...palace, mainStar, subStar, score, palaceIdx };
+    });
+
+    // 명궁 주성
+    const mingStar = palaceStars[0].mainStar;
+
+    let html = `<div style="text-align:center;margin-bottom:24px;">
+        <div style="font-size:14px;color:var(--text-muted);margin-bottom:4px;">명궁(命宮) 주성</div>
+        <div style="font-size:28px;font-weight:700;color:var(--gold);font-family:'Noto Serif KR',serif;">${mingStar.hanja} · ${mingStar.name}</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-top:6px;">${mingStar.desc}</div>
+        <div style="font-size:14px;color:var(--text-secondary);margin-top:10px;line-height:1.6;">${mingStar.trait}</div>
+    </div>`;
+
+    // 12궁 격자
+    html += `<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:20px;">`;
+    // 자미두수 차트를 4x3 격자로 표현 (전통적 배치 근사)
+    const gridOrder = [11, 0, 1, 2, 10, -1, -1, 3, 9, -1, -1, 4, 8, 7, 6, 5];
+    gridOrder.forEach(idx => {
+        if (idx === -1) {
+            html += `<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:10px;text-align:center;opacity:0.3;">
+                <div style="font-size:20px;color:var(--gold);font-family:'Noto Serif KR',serif;">命盤</div>
+            </div>`;
+            return;
+        }
+        const p = palaceStars[idx];
+        const scoreColor = p.score >= 75 ? 'var(--wood)' : p.score >= 60 ? 'var(--gold)' : 'var(--fire)';
+        const isMain = idx === 0;
+        html += `<div style="background:${isMain ? 'var(--bg-card-light)' : 'var(--bg-card)'};border:1px solid ${isMain ? 'var(--gold-dark)' : 'var(--border)'};border-radius:8px;padding:10px;text-align:center;${isMain ? 'box-shadow:0 0 8px rgba(212,165,67,0.3);' : ''}">
+            <div style="font-size:10px;color:var(--text-muted)">${p.hanja}</div>
+            <div style="font-size:12px;font-weight:600;color:${isMain ? 'var(--gold)' : 'var(--text)'};margin:2px 0;">${p.name}</div>
+            <div style="font-size:11px;color:var(--gold-light);margin-bottom:3px;">${p.mainStar.hanja}</div>
+            ${p.subStar ? `<div style="font-size:10px;color:var(--text-muted)">${p.subStar.hanja}</div>` : ''}
+            <div style="font-size:11px;color:${scoreColor};margin-top:4px;font-weight:600;">${p.score}점</div>
+        </div>`;
+    });
+    html += `</div>`;
+
+    // 주요 궁 상세
+    const keyPalaces = [0, 2, 4, 8]; // 명궁, 부처궁, 재백궁, 관록궁
+    html += `<div style="display:flex;flex-direction:column;gap:10px;">`;
+    keyPalaces.forEach(idx => {
+        const p = palaceStars[idx];
+        const grade = p.score >= 80 ? '대길(大吉)' : p.score >= 70 ? '길(吉)' : p.score >= 55 ? '평(平)' : '주의(注意)';
+        const gradeColor = p.score >= 80 ? 'var(--wood)' : p.score >= 70 ? 'var(--gold)' : p.score >= 55 ? 'var(--text-secondary)' : 'var(--fire)';
+        html += `<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                <div style="font-weight:600;color:var(--gold);">${p.hanja} ${p.name}</div>
+                <div style="font-size:13px;color:${gradeColor};font-weight:600;">${grade} (${p.score}점)</div>
+            </div>
+            <div style="font-size:13px;color:var(--text-secondary);margin-bottom:4px;">${p.desc}</div>
+            <div style="font-size:12px;color:var(--text-muted);">주성: <span style="color:var(--gold-light)">${p.mainStar.hanja} ${p.mainStar.name}</span> — ${p.mainStar.trait.substring(0, 40)}...</div>
+        </div>`;
+    });
+    html += `</div>`;
+
+    section.innerHTML = html;
+}
+
+// ===== 신점 스타일 분석 (神占) =====
+function renderShamanFortune(dayGanIdx, dayJiIdx, yearP, monthP, hourP, elements, gender, birthYear, birthMonth, birthDay) {
+    const section = document.getElementById('shamanContent');
+    const elIdx = CHEONGAN_ELEMENT[dayGanIdx];
+    const genderKo = gender === 'male' ? '도련님' : '아가씨';
+    const maxEl = elements.indexOf(Math.max(...elements));
+    const minEl = elements.indexOf(Math.min(...elements));
+    const minVal = Math.min(...elements);
+    const totalEl = elements.reduce((a,b)=>a+b,0);
+
+    // 십성 (연주 기준)
+    const yearTenStar = getTenStar(dayGanIdx, yearP.gan);
+
+    // 12운성 간략
+    const UN_SEONG_NAMES = ['절','태','양','장생','목욕','관대','건록','제왕','쇠','병','사','묘'];
+    const dayUnIdx = (dayGanIdx * 3 + dayJiIdx) % 12;
+    const dayUnSeong = UN_SEONG_NAMES[dayUnIdx];
+
+    // ========== 전생 분석 ==========
+    const JEONGSAENG = [
+        { life: '고관대작(高官大爵)', desc: '전생에 높은 벼슬을 하고 백성을 다스리던 분이셨습니다. 그래서 이생에서도 리더십이 강하고 남 위에 서려는 기질이 있어요.', karma: '권력을 남용한 업이 있어, 이생에서는 겸손을 배워야 합니다.', cure: '절에 가서 천도재를 올리시고, 어려운 이웃을 도우면 전생의 업이 풀립니다.' },
+        { life: '학자(學者)', desc: '전생에 글을 읽고 학문을 닦던 선비였습니다. 이생에서 머리가 좋고 배움에 대한 갈증이 있는 것이 그 때문이에요.', karma: '지식으로 남을 깔본 업이 있어, 이생에서는 지식을 나눠야 합니다.', cure: '공부하는 이에게 책을 사주거나 가르침을 베풀면 복이 옵니다.' },
+        { life: '장군(將軍)', desc: '전생에 전쟁터를 누비던 무인이셨습니다. 그래서 이생에서도 승부욕이 강하고 불의를 참지 못해요.', karma: '전장에서 많은 살생을 한 업이 있어, 이생에서 건강 문제로 나타날 수 있습니다.', cure: '방생(放生)을 하시고, 살아있는 것을 함부로 하지 마세요. 산사에서 기도하면 좋습니다.' },
+        { life: '상인(商人)', desc: '전생에 큰 장사를 하던 거상이셨습니다. 이생에서도 돈에 대한 감각이 뛰어나고 사업 수완이 좋아요.', karma: '이익을 위해 남을 속인 업이 있어, 이생에서 배신을 당할 수 있습니다.', cure: '정직하게 살고, 번 돈의 일부를 어려운 이에게 베풀면 업이 풀립니다.' },
+        { life: '승려(僧侶)', desc: '전생에 산속에서 도를 닦던 수행자였습니다. 이생에서도 영적 감수성이 높고 세속적인 것에 초연한 면이 있어요.', karma: '수행 중 교만해진 업이 있어, 이생에서 외로움을 겪을 수 있습니다.', cure: '마음을 비우는 명상을 하고, 사람들과 어울리는 연습을 하세요.' },
+        { life: '예인(藝人)', desc: '전생에 노래와 춤으로 사람들을 즐겁게 하던 예인이셨습니다. 이생에서도 예술적 감각이 뛰어나요.', karma: '화려함에 빠져 본질을 잃은 업이 있어, 이생에서 내면을 채워야 합니다.', cure: '마음을 다스리는 수행을 하고, 예술로 남을 감동시키면 복이 쌓입니다.' },
+        { life: '농부(農夫)', desc: '전생에 땅을 일구며 성실하게 살던 분이셨습니다. 이생에서도 근면하고 착실한 성품이 있어요.', karma: '남의 것을 탐낸 업이 약간 있어, 이생에서 재물 시비를 조심해야 합니다.', cure: '탐욕을 버리고 자기 것에 만족하면, 오히려 더 큰 복이 옵니다.' },
+        { life: '왕족(王族)', desc: '전생에 왕실에서 귀하게 태어난 분이셨습니다. 이생에서도 기품이 있고 고상한 취향을 가지고 있어요.', karma: '백성의 고통을 외면한 업이 있어, 이생에서 공감 능력을 키워야 합니다.', cure: '봉사활동을 꾸준히 하고, 약자를 돌보면 큰 복을 받습니다.' },
+        { life: '의원(醫員)', desc: '전생에 아픈 사람을 치료하던 의원이셨습니다. 이생에서도 남을 돌보려는 마음이 크고 치유 능력이 있어요.', karma: '치료비를 과하게 받은 업이 있어, 이생에서 베풂이 필요합니다.', cure: '아픈 사람을 도와주고, 약을 나눠주면 건강운이 좋아집니다.' },
+        { life: '풍류객(風流客)', desc: '전생에 자유롭게 천하를 떠돌며 시를 짓던 풍류객이셨습니다. 이생에서도 자유를 사랑하고 구속을 싫어해요.', karma: '책임을 회피한 업이 있어, 이생에서 책임감을 배워야 합니다.', cure: '한 곳에 정착하여 뿌리를 내리고, 가정을 소중히 하면 안정됩니다.' },
+    ];
+    const jeongsaengIdx = (dayGanIdx + dayJiIdx + yearP.ji) % JEONGSAENG.length;
+    const js = JEONGSAENG[jeongsaengIdx];
+
+    // ========== 수호신 ==========
+    const SUHOSIN = [
+        { name: '산신령(山神靈)', emoji: '🏔️', desc: '산을 관장하는 산신령님이 당신을 지켜보고 계십니다. 산과 자연에서 기운을 받으면 좋습니다.', where: '가까운 산의 산신각에서 기도하세요.' },
+        { name: '용왕님(龍王)', emoji: '🐲', desc: '바다와 물을 관장하는 용왕님의 보호를 받고 있습니다. 물 근처에서 기운이 강해집니다.', where: '바다나 강가에서 소원을 빌면 이뤄집니다.' },
+        { name: '칠성님(七星)', emoji: '⭐', desc: '북두칠성의 기운을 받고 있습니다. 밤하늘의 별을 보며 기도하면 소원이 이뤄집니다.', where: '칠성각이나 밤하늘 아래서 기도하세요.' },
+        { name: '관음보살(觀音)', emoji: '🙏', desc: '자비의 관음보살님이 당신을 감싸고 계십니다. 어려울 때 관세음보살을 부르면 도움이 옵니다.', where: '절에서 관음전에 기도를 올리세요.' },
+        { name: '대감님(大監)', emoji: '🎩', desc: '재물을 관장하는 대감님이 붙어 계십니다. 사업과 재물에 도움을 주시는 분입니다.', where: '대감님께 정화수를 올리고 비손하세요.' },
+        { name: '장군님(將軍)', emoji: '⚔️', desc: '장군신이 당신을 호위하고 계십니다. 강한 기운으로 나쁜 것을 막아줍니다.', where: '장군당이나 성황당에서 기도하세요.' },
+        { name: '삼신할머니(三神)', emoji: '👵', desc: '삼신할머니가 당신의 건강과 자손을 지켜보고 계십니다. 가정의 평안을 주시는 분입니다.', where: '정화수를 떠놓고 삼신할머니께 빌면 좋습니다.' },
+        { name: '선녀님(仙女)', emoji: '🧚', desc: '하늘의 선녀님이 당신과 함께 하십니다. 예술적 영감과 아름다운 인연을 가져다줍니다.', where: '깨끗한 마음으로 정성을 드리세요.' },
+        { name: '조상님(祖上)', emoji: '🏛️', desc: '돌아가신 조상님이 강하게 당신을 보호하고 계십니다. 조상의 음덕이 매우 큽니다.', where: '제사와 차례를 정성껏 모시세요. 성묘를 자주 하시면 좋습니다.' },
+        { name: '토지신(土地神)', emoji: '🌾', desc: '이 땅의 토지신이 당신을 돌보고 계십니다. 살고 있는 터의 기운이 중요합니다.', where: '이사하면 터주고사를 지내고, 집 주변을 깨끗이 하세요.' },
+    ];
+    const suhoIdx = (dayGanIdx * 2 + dayJiIdx + birthMonth) % SUHOSIN.length;
+    const suho = SUHOSIN[suhoIdx];
+
+    // ========== 살(煞) 분석 ==========
+    const SSAL_LIST = [
+        { name: '역마살(驛馬煞)', cond: (e) => e[0] >= 2 && e[1] >= 2, desc: '이 사람 가만히 못 앉아 있어요! 역마살이 끼어서 자꾸 돌아다니고 싶고 한 곳에 정착을 못 해요.', cure: '오히려 여행이나 해외 관련 일을 하면 살이 풀려서 대박이 납니다!', icon: '🐎' },
+        { name: '도화살(桃花煞)', cond: (e) => dayJiIdx === 3 || dayJiIdx === 6 || dayJiIdx === 9 || dayJiIdx === 0, desc: '이 사람 이성에게 인기가 엄청 많아요! 도화살이 있어서 눈이 반짝반짝하고 매력이 철철 넘쳐요.', cure: '바람기 조심하시고, 한 사람에게 집중하면 오히려 큰 복이 됩니다!', icon: '🌸' },
+        { name: '화개살(華蓋煞)', cond: (e) => dayJiIdx === 4 || dayJiIdx === 8 || dayJiIdx === 1, desc: '영적인 감수성이 보통이 아니에요! 화개살이 있어서 종교, 철학, 예술 쪽으로 재능이 있어요.', cure: '명상이나 기도를 하면 마음이 편해지고, 예술 활동이 큰 도움이 됩니다.', icon: '🔮' },
+        { name: '겁살(劫煞)', cond: (e) => e[3] >= 3, desc: '가끔 뜻밖의 사고나 손재수가 있을 수 있어요. 특히 금전 거래에서 조심하셔야 해요!', cure: '큰돈 거래는 신중히 하시고, 보증은 절대 서지 마세요! 부적을 지니면 좋습니다.', icon: '⚡' },
+        { name: '백호살(白虎煞)', cond: (e) => e[3] >= 2 && e[1] >= 2, desc: '교통사고나 수술수가 보여요! 칼을 쓰는 일에 주의하시고, 운전할 때 각별히 조심하세요!', cure: '헌혈을 하면 피를 보는 살이 풀립니다. 매년 건강검진 꼭 받으세요!', icon: '🐯' },
+        { name: '관재살(官災煞)', cond: (e) => elements[CHEONGAN_ELEMENT[(dayGanIdx+6)%10]] >= 2, desc: '공문서, 소송, 벌금 관련해서 주의가 필요해요! 관재수가 보입니다.', cure: '서류는 꼼꼼히 확인하시고, 법적 다툼은 피하세요. 합의가 상책입니다!', icon: '⚖️' },
+        { name: '고독살(孤獨煞)', cond: (e) => minVal === 0, desc: '마음속에 외로움이 깊어요. 사람이 많아도 혼자라는 느낌이 들 때가 있죠...', cure: '봉사활동을 하거나 반려동물을 키우면 외로움이 풀리고 복이 들어옵니다.', icon: '🌙' },
+        { name: '원진살(怨嗔煞)', cond: (e) => (dayJiIdx + 6) % 12 === yearP.ji, desc: '가까운 사람과 미워하면서도 떨어질 수 없는 관계가 있어요. 애증의 관계가 있습니다.', cure: '상대를 미워하지 말고 이해하려고 노력하세요. 용서가 해법입니다.', icon: '💔' },
+    ];
+
+    const activeSsal = SSAL_LIST.filter(s => s.cond(elements));
+    if (activeSsal.length === 0) {
+        activeSsal.push({ name: '무살(無煞)', desc: '특별히 강한 살이 없습니다. 평온한 사주이니 안심하세요!', cure: '평안한 마음을 유지하고 감사하며 살면 됩니다.', icon: '☀️' });
+    }
+
+    // ========== 신수(神數) 점수 ==========
+    const AREAS = ['재물운', '건강운', '애정운', '직장운', '가정운', '귀인운'];
+    const AREA_EMOJIS = ['💰', '🏥', '❤️', '💼', '🏠', '🤝'];
+    const areaScores = AREAS.map((_, i) => {
+        let base = 55 + (dayGanIdx * 7 + dayJiIdx * 3 + i * 11) % 35;
+        if (i === 0 && maxEl === 3) base += 8;
+        if (i === 1 && minEl === 4) base -= 10;
+        if (i === 2 && (dayJiIdx === 3 || dayJiIdx === 6)) base += 10;
+        if (i === 3 && yearTenStar === '정관') base += 12;
+        if (i === 4 && elements[2] >= 2) base += 7;
+        if (i === 5 && yearTenStar === '정인') base += 10;
+        return Math.min(98, Math.max(30, base));
+    });
+    const totalScore = Math.round(areaScores.reduce((a,b)=>a+b,0) / areaScores.length);
+
+    // ========== 신점 말투 생성 ==========
+    const EL_SHAMAN = ['나무','불','흙','쇠','물'];
+    const dayElName = EL_SHAMAN[elIdx];
+
+    // 개운법(開運法)
+    const GAEUN = [
+        { el: 0, text: '동쪽으로 나무가 많은 곳에서 산책하세요. 초록색 옷을 자주 입고, 새벽 시간에 기도하면 좋습니다. 소나무 아래서 심호흡하면 기운이 살아납니다.' },
+        { el: 1, text: '남쪽 방향의 밝은 곳이 좋습니다. 빨간색 소품을 가까이 두시고, 촛불을 켜놓고 명상하면 기운이 강해집니다. 해 뜰 때 기도하세요.' },
+        { el: 2, text: '중앙에 머무르고 노란색, 갈색 계열을 가까이 하세요. 흙을 만지는 활동(텃밭 가꾸기, 도자기)이 좋습니다. 산에 가서 흙을 밟으세요.' },
+        { el: 3, text: '서쪽 방향이 길합니다. 흰색, 은색 금속 액세서리를 착용하시고, 풍경 소리를 집에 걸어두면 나쁜 기운이 물러갑니다. 가을에 기도하면 효험이 있습니다.' },
+        { el: 4, text: '북쪽 방향이 좋고 검정색, 남색 계열을 가까이 하세요. 물을 자주 마시고 수영장이나 계곡을 찾으세요. 비 오는 날 정화수를 떠놓고 비세요.' },
+    ];
+    const needGaeun = GAEUN[minEl];
+
+    // 올해(2026) 신점 운세
+    const yearFortunes = [
+        '올해는 새 문이 열리는 해입니다! 그동안 막혀있던 일이 술술 풀리기 시작해요.',
+        '올해는 참고 기다리는 해입니다. 조급하면 일을 그르치니, 때를 기다리세요.',
+        '올해는 귀인이 나타나는 해입니다! 새로운 사람을 만나면 함부로 거절하지 마세요.',
+        '올해는 변화의 해입니다. 이사, 이직, 전환점이 찾아오니 두려워하지 마세요.',
+        '올해는 열매를 거두는 해입니다! 그동안의 노력이 결실을 맺으니 기대하셔도 됩니다.',
+        '올해는 건강을 챙겨야 하는 해입니다. 무리하지 말고, 몸이 보내는 신호에 귀 기울이세요.',
+        '올해는 재물이 들어오는 해입니다! 하지만 나가는 것도 많으니 아끼고 모아야 합니다.',
+        '올해는 학업과 자기 발전의 해입니다. 공부하고 자격증 따면 크게 빛을 봅니다.',
+        '올해는 가정에 경사가 있는 해입니다! 결혼, 출산, 이사 등 좋은 일이 생겨요.',
+        '올해는 시험과 도전의 해입니다. 힘들지만 이겨내면 내년에 큰 복이 옵니다.',
+    ];
+    const yearFortuneIdx = (dayGanIdx + dayJiIdx + 2026) % yearFortunes.length;
+
+    // ========== HTML 조립 ==========
+    let html = '';
+
+    // 1. 도입 (무속인 말투)
+    html += `<div style="background:linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 50%, #1a0a2e 100%);border:2px solid #8b5cf6;border-radius:16px;padding:28px;margin-bottom:20px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 30% 20%, rgba(139,92,246,0.15) 0%, transparent 50%), radial-gradient(circle at 70% 80%, rgba(236,72,153,0.1) 0%, transparent 50%);pointer-events:none;"></div>
+        <div style="position:relative;z-index:1;">
+            <div style="text-align:center;font-size:28px;margin-bottom:12px;">🔮✨🌙</div>
+            <div style="text-align:center;font-size:18px;font-weight:700;color:#c4b5fd;font-family:'Noto Serif KR',serif;margin-bottom:16px;line-height:1.6;">
+                "어허~ ${genderKo}, 이리 가까이 와보세요.<br>당신의 사주를 한번 들여다봅시다..."
+            </div>
+            <div style="font-size:14px;color:#d8b4fe;line-height:2;text-align:center;">
+                ${genderKo}의 타고난 기운은 <strong style="color:#fbbf24">${dayElName}</strong>의 기운이에요.<br>
+                ${elIdx === 0 ? '나무처럼 곧고 쑥쑥 자라는 기운을 타고 났어요.' :
+                  elIdx === 1 ? '불처럼 뜨겁고 열정적인 기운을 타고 났어요.' :
+                  elIdx === 2 ? '흙처럼 듬직하고 만물을 품는 기운을 타고 났어요.' :
+                  elIdx === 3 ? '쇠처럼 단단하고 날카로운 기운을 타고 났어요.' :
+                  '물처럼 유연하고 깊은 지혜의 기운을 타고 났어요.'}
+                <br>
+                ${maxEl === minEl ? '오행이 고르게 잡혀있어 균형 잡힌 팔자예요!' :
+                  `<strong style="color:${ELEMENT_COLORS[maxEl]}">${EL_SHAMAN[maxEl]}</strong> 기운이 강하고 <strong style="color:${ELEMENT_COLORS[minEl]}">${EL_SHAMAN[minEl]}</strong> 기운이 약하니, 보충이 필요해요!`}
+            </div>
+        </div>
+    </div>`;
+
+    // 2. 전생 분석
+    html += `<div style="background:#1c1917;border:1px solid #78716c;border-radius:14px;padding:22px;margin-bottom:16px;">
+        <div style="font-size:16px;font-weight:700;color:#fbbf24;margin-bottom:12px;">🕯️ 전생(前生) — 당신의 전생은...</div>
+        <div style="background:#292524;border-radius:10px;padding:16px;margin-bottom:12px;">
+            <div style="font-size:20px;font-weight:700;color:#fcd34d;margin-bottom:8px;font-family:'Noto Serif KR',serif;">"당신은 전생에 ${js.life}이셨습니다"</div>
+            <div style="font-size:14px;color:#d6d3d1;line-height:1.8;">${js.desc}</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div style="background:#292524;border-radius:10px;padding:14px;">
+                <div style="font-size:12px;color:#a8a29e;margin-bottom:4px;">⚖️ 전생의 업(業)</div>
+                <div style="font-size:13px;color:#fca5a5;line-height:1.7;">${js.karma}</div>
+            </div>
+            <div style="background:#292524;border-radius:10px;padding:14px;">
+                <div style="font-size:12px;color:#a8a29e;margin-bottom:4px;">💫 해소법</div>
+                <div style="font-size:13px;color:#86efac;line-height:1.7;">${js.cure}</div>
+            </div>
+        </div>
+    </div>`;
+
+    // 3. 수호신
+    html += `<div style="background:#1c1917;border:1px solid #78716c;border-radius:14px;padding:22px;margin-bottom:16px;">
+        <div style="font-size:16px;font-weight:700;color:#fbbf24;margin-bottom:12px;">🛡️ 당신의 수호신(守護神)</div>
+        <div style="background:#292524;border-radius:10px;padding:20px;text-align:center;">
+            <div style="font-size:42px;margin-bottom:8px;">${suho.emoji}</div>
+            <div style="font-size:22px;font-weight:700;color:#c4b5fd;font-family:'Noto Serif KR',serif;margin-bottom:10px;">${suho.name}</div>
+            <div style="font-size:14px;color:#d6d3d1;line-height:1.7;margin-bottom:12px;">${suho.desc}</div>
+            <div style="font-size:13px;color:#86efac;background:#1a2e1a;border-radius:8px;padding:10px;display:inline-block;">📍 ${suho.where}</div>
+        </div>
+    </div>`;
+
+    // 4. 살(煞) 분석
+    html += `<div style="background:#1c1917;border:1px solid #78716c;border-radius:14px;padding:22px;margin-bottom:16px;">
+        <div style="font-size:16px;font-weight:700;color:#fbbf24;margin-bottom:12px;">⚡ 살(煞) 분석 — 조심해야 할 기운</div>`;
+    activeSsal.forEach(s => {
+        html += `<div style="background:#292524;border:1px solid #44403c;border-radius:10px;padding:16px;margin-bottom:10px;">
+            <div style="font-size:15px;font-weight:600;color:#fcd34d;margin-bottom:8px;">${s.icon} ${s.name}</div>
+            <div style="font-size:13px;color:#d6d3d1;line-height:1.7;margin-bottom:8px;">${s.desc}</div>
+            <div style="font-size:13px;color:#86efac;line-height:1.7;">💡 <strong>해결법:</strong> ${s.cure}</div>
+        </div>`;
+    });
+    html += `</div>`;
+
+    // 5. 신수 점수
+    html += `<div style="background:#1c1917;border:1px solid #78716c;border-radius:14px;padding:22px;margin-bottom:16px;">
+        <div style="font-size:16px;font-weight:700;color:#fbbf24;margin-bottom:4px;">📊 신수(神數) — 운세 점수</div>
+        <div style="text-align:center;margin:16px 0;">
+            <div style="display:inline-block;width:90px;height:90px;border-radius:50%;border:3px solid ${totalScore >= 75 ? '#22c55e' : totalScore >= 60 ? '#eab308' : '#ef4444'};display:flex;align-items:center;justify-content:center;flex-direction:column;">
+                <div style="font-size:32px;font-weight:900;color:${totalScore >= 75 ? '#22c55e' : totalScore >= 60 ? '#eab308' : '#ef4444'}">${totalScore}</div>
+                <div style="font-size:10px;color:#a8a29e">${totalScore >= 85 ? '대통' : totalScore >= 75 ? '상길' : totalScore >= 65 ? '중길' : totalScore >= 55 ? '소길' : '주의'}</div>
+            </div>
+        </div>`;
+    areaScores.forEach((score, i) => {
+        const pct = score;
+        const color = score >= 80 ? '#22c55e' : score >= 65 ? '#eab308' : '#ef4444';
+        html += `<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+            <div style="width:70px;font-size:13px;color:#d6d3d1;flex-shrink:0;">${AREA_EMOJIS[i]} ${AREAS[i]}</div>
+            <div style="flex:1;background:#292524;border-radius:6px;height:18px;overflow:hidden;">
+                <div style="width:${pct}%;height:100%;background:${color};border-radius:6px;transition:width 0.5s;"></div>
+            </div>
+            <div style="width:30px;font-size:13px;color:${color};font-weight:600;text-align:right;">${score}</div>
+        </div>`;
+    });
+    html += `</div>`;
+
+    // 6. 올해 운세 (신점 말투)
+    html += `<div style="background:linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 50%, #1a0a2e 100%);border:2px solid #8b5cf6;border-radius:14px;padding:22px;margin-bottom:16px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 80% 30%, rgba(139,92,246,0.12) 0%, transparent 50%);pointer-events:none;"></div>
+        <div style="position:relative;z-index:1;">
+            <div style="font-size:16px;font-weight:700;color:#c4b5fd;margin-bottom:12px;">🗓️ 2026년 병오(丙午)년 신점 운세</div>
+            <div style="font-size:15px;color:#e9d5ff;line-height:2;font-family:'Noto Serif KR',serif;">
+                "어허, ${genderKo}! ${yearFortunes[yearFortuneIdx]}"
+            </div>
+            <div style="margin-top:14px;font-size:13px;color:#d8b4fe;line-height:1.8;">
+                ${totalScore >= 70 ? `"올해 운이 꽤 좋아요! 하지만 방심하면 안 됩니다. 특히 ${AREAS[areaScores.indexOf(Math.min(...areaScores))]}이 약하니 거기를 챙기세요!"` :
+                `"올해 좀 힘들 수 있어요... 하지만 걱정 마세요! ${AREAS[areaScores.indexOf(Math.max(...areaScores))]}이 강하니, 그쪽에 집중하면 길이 열립니다!"`}
+            </div>
+        </div>
+    </div>`;
+
+    // 7. 개운법 (처방)
+    html += `<div style="background:#1c1917;border:1px solid #78716c;border-radius:14px;padding:22px;margin-bottom:16px;">
+        <div style="font-size:16px;font-weight:700;color:#fbbf24;margin-bottom:12px;">🍀 개운법(開運法) — 운을 여는 비법</div>
+        <div style="background:#292524;border-radius:10px;padding:16px;margin-bottom:12px;">
+            <div style="font-size:14px;font-weight:600;color:#86efac;margin-bottom:6px;">🌿 부족한 ${EL_SHAMAN[minEl]}(${ELEMENT_NAMES[minEl]}) 기운 보충법</div>
+            <div style="font-size:13px;color:#d6d3d1;line-height:1.8;">${needGaeun.text}</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div style="background:#292524;border-radius:10px;padding:14px;">
+                <div style="font-size:13px;font-weight:600;color:#fcd34d;margin-bottom:6px;">🔢 행운의 숫자</div>
+                <div style="font-size:13px;color:#d6d3d1;">${[minEl*2+1, dayGanIdx+3, (dayJiIdx+5)%10+1].join(', ')}</div>
+            </div>
+            <div style="background:#292524;border-radius:10px;padding:14px;">
+                <div style="font-size:13px;font-weight:600;color:#fcd34d;margin-bottom:6px;">🎨 행운의 색상</div>
+                <div style="font-size:13px;color:#d6d3d1;">${['초록/청색','빨강/자주','노랑/갈색','흰색/은색','검정/남색'][minEl]}</div>
+            </div>
+            <div style="background:#292524;border-radius:10px;padding:14px;">
+                <div style="font-size:13px;font-weight:600;color:#fcd34d;margin-bottom:6px;">🧭 행운의 방향</div>
+                <div style="font-size:13px;color:#d6d3d1;">${['동쪽','남쪽','중앙','서쪽','북쪽'][minEl]}</div>
+            </div>
+            <div style="background:#292524;border-radius:10px;padding:14px;">
+                <div style="font-size:13px;font-weight:600;color:#fcd34d;margin-bottom:6px;">🍽️ 행운의 음식</div>
+                <div style="font-size:13px;color:#d6d3d1;">${['푸른 채소, 신맛 음식','고추, 쓴맛 음식','곡류, 단맛 음식','무, 매운맛 음식','해산물, 짠맛 음식'][minEl]}</div>
+            </div>
+        </div>
+    </div>`;
+
+    // 8. 마무리 (무속인 말투)
+    html += `<div style="background:linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 50%, #1a0a2e 100%);border:2px solid #8b5cf6;border-radius:14px;padding:24px;text-align:center;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 50% 50%, rgba(139,92,246,0.1) 0%, transparent 60%);pointer-events:none;"></div>
+        <div style="position:relative;z-index:1;">
+            <div style="font-size:24px;margin-bottom:10px;">🙏✨🔮✨🙏</div>
+            <div style="font-size:16px;color:#c4b5fd;font-family:'Noto Serif KR',serif;line-height:2;">
+                "${genderKo}, 사주팔자가 다가 아니에요!<br>
+                타고난 운명은 30%, 나머지 70%는 자기 하기 나름이에요.<br>
+                좋은 마음 먹고, 착하게 살면 신이 도와줍니다.<br>
+                <span style="color:#fbbf24;font-weight:700;">만사형통하시길 빕니다~ 🙏</span>"
+            </div>
+        </div>
+    </div>`;
+
+    section.innerHTML = html;
 }
 </script>
 
